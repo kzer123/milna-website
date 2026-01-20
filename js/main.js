@@ -163,12 +163,13 @@ function setupParallax() {
 }
 
 // ==========================================
-// マウスフォロー効果（星の輝き）
+// マウスフォロー効果（猫の足跡）
 // ==========================================
 function setupMouseEffect() {
     let mouseX = 0;
     let mouseY = 0;
     let cursorCircle = null;
+    let pawPrintTimer = null;
     
     // カーソル用のカスタム要素を作成
     const createCursorCircle = () => {
@@ -187,6 +188,44 @@ function setupMouseEffect() {
         document.body.appendChild(cursorCircle);
     };
     
+    // 猫の足跡を生成
+    const createPawPrint = (x, y) => {
+        const pawPrint = document.createElement('div');
+        pawPrint.innerHTML = '🐾';
+        pawPrint.style.cssText = `
+            position: fixed;
+            left: ${x}px;
+            top: ${y}px;
+            font-size: 20px;
+            pointer-events: none;
+            z-index: 9998;
+            animation: pawPrintFade 2s ease-out forwards;
+            transform: rotate(${Math.random() * 40 - 20}deg);
+        `;
+        document.body.appendChild(pawPrint);
+        
+        setTimeout(() => pawPrint.remove(), 2000);
+    };
+    
+    // CSSアニメーション追加
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes pawPrintFade {
+            0% {
+                opacity: 0.8;
+                transform: scale(0) rotate(0deg);
+            }
+            50% {
+                opacity: 0.6;
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1.5) rotate(20deg);
+            }
+        }
+    `;
+    document.head.appendChild(style);
+    
     // マウス移動時
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
@@ -196,6 +235,16 @@ function setupMouseEffect() {
             cursorCircle.style.left = `${mouseX - 10}px`;
             cursorCircle.style.top = `${mouseY - 10}px`;
             cursorCircle.style.display = 'block';
+        }
+        
+        // 足跡を残す（一定間隔で）
+        if (!pawPrintTimer) {
+            pawPrintTimer = setTimeout(() => {
+                if (Math.random() > 0.7) {
+                    createPawPrint(mouseX, mouseY);
+                }
+                pawPrintTimer = null;
+            }, 200);
         }
     });
     
@@ -349,6 +398,639 @@ function setupActiveSection() {
 }
 
 // ==========================================
+// 浮遊する音符エフェクト
+// ==========================================
+function createFloatingNotes() {
+    const notes = ['♪', '♫', '♬', '♩'];
+    
+    setInterval(() => {
+        if (Math.random() > 0.6) {
+            const note = document.createElement('div');
+            note.textContent = notes[Math.floor(Math.random() * notes.length)];
+            note.style.cssText = `
+                position: fixed;
+                left: ${Math.random() * 100}%;
+                bottom: -50px;
+                font-size: ${Math.random() * 20 + 20}px;
+                color: rgba(155, 89, 182, ${Math.random() * 0.5 + 0.3});
+                pointer-events: none;
+                z-index: 1;
+                animation: floatUpNote ${Math.random() * 3 + 4}s ease-out forwards;
+            `;
+            document.body.appendChild(note);
+            
+            setTimeout(() => note.remove(), 7000);
+        }
+    }, 3000);
+    
+    // CSSアニメーション追加
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes floatUpNote {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(${Math.random() * 360}deg);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// ==========================================
+// インタラクティブな星座描画
+// ==========================================
+function setupConstellationDrawing() {
+    let constellationPoints = [];
+    let canvas = null;
+    let ctx = null;
+    
+    // キャンバスを作成
+    const createCanvas = () => {
+        canvas = document.createElement('canvas');
+        canvas.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+        `;
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        document.body.appendChild(canvas);
+        ctx = canvas.getContext('2d');
+    };
+    
+    createCanvas();
+    
+    // ダブルクリックで星座のポイントを追加
+    document.addEventListener('dblclick', (e) => {
+        const point = { x: e.clientX, y: e.clientY };
+        constellationPoints.push(point);
+        
+        // 星を描画
+        ctx.fillStyle = '#ffd700';
+        ctx.beginPath();
+        ctx.arc(point.x, point.y, 5, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // グロー効果
+        ctx.shadowBlur = 15;
+        ctx.shadowColor = '#ffd700';
+        ctx.fill();
+        ctx.shadowBlur = 0;
+        
+        // 前のポイントと線で結ぶ
+        if (constellationPoints.length > 1) {
+            const prevPoint = constellationPoints[constellationPoints.length - 2];
+            ctx.strokeStyle = 'rgba(255, 215, 0, 0.5)';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(prevPoint.x, prevPoint.y);
+            ctx.lineTo(point.x, point.y);
+            ctx.stroke();
+        }
+        
+        // キラキラエフェクト
+        createSparkle(point.x, point.y);
+        
+        // 5つ以上のポイントでリセット
+        if (constellationPoints.length >= 5) {
+            setTimeout(() => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                constellationPoints = [];
+            }, 3000);
+        }
+    });
+    
+    // リサイズ対応
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
+}
+
+// キラキラエフェクト
+function createSparkle(x, y) {
+    for (let i = 0; i < 8; i++) {
+        const sparkle = document.createElement('div');
+        sparkle.textContent = '✨';
+        sparkle.style.cssText = `
+            position: fixed;
+            left: ${x}px;
+            top: ${y}px;
+            font-size: 15px;
+            pointer-events: none;
+            z-index: 9999;
+            animation: sparkleExplosion 0.8s ease-out forwards;
+        `;
+        sparkle.style.setProperty('--angle', `${i * 45}deg`);
+        document.body.appendChild(sparkle);
+        
+        setTimeout(() => sparkle.remove(), 800);
+    }
+    
+    // CSSアニメーション追加
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes sparkleExplosion {
+            0% {
+                transform: translate(-50%, -50%) rotate(var(--angle)) translateX(0) scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(var(--angle)) translateX(50px) scale(1);
+                opacity: 0;
+            }
+        }
+    `;
+    if (!document.querySelector('style[data-sparkle]')) {
+        style.setAttribute('data-sparkle', 'true');
+        document.head.appendChild(style);
+    }
+}
+
+// ==========================================
+// アニメーションミルナキャラクター
+// ==========================================
+function createAnimatedMiluna() {
+    const miluna = document.createElement('div');
+    miluna.innerHTML = '🐱';
+    miluna.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: -60px;
+        font-size: 50px;
+        z-index: 10000;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        animation: milunaWalk 20s linear infinite;
+    `;
+    
+    // クリックイベント
+    miluna.addEventListener('click', () => {
+        miluna.style.transform = 'scale(1.3) rotate(360deg)';
+        createHearts(miluna);
+        setTimeout(() => {
+            miluna.style.transform = 'scale(1)';
+        }, 300);
+    });
+    
+    document.body.appendChild(miluna);
+    
+    // 歩くアニメーション
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes milunaWalk {
+            0% {
+                right: -60px;
+                transform: scaleX(1);
+            }
+            25% {
+                right: 50%;
+                transform: scaleX(1);
+            }
+            25.1% {
+                transform: scaleX(-1);
+            }
+            50% {
+                right: 100%;
+                transform: scaleX(-1);
+            }
+            50.1% {
+                right: -60px;
+                transform: scaleX(-1);
+            }
+            75% {
+                right: 50%;
+                transform: scaleX(-1);
+            }
+            75.1% {
+                transform: scaleX(1);
+            }
+            100% {
+                right: -60px;
+                transform: scaleX(1);
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// ハートエフェクト
+function createHearts(element) {
+    for (let i = 0; i < 5; i++) {
+        setTimeout(() => {
+            const heart = document.createElement('div');
+            heart.textContent = '💜';
+            const rect = element.getBoundingClientRect();
+            heart.style.cssText = `
+                position: fixed;
+                left: ${rect.left + 25}px;
+                top: ${rect.top}px;
+                font-size: 20px;
+                pointer-events: none;
+                z-index: 9999;
+                animation: heartFloat 1.5s ease-out forwards;
+            `;
+            document.body.appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 1500);
+        }, i * 100);
+    }
+    
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes heartFloat {
+            0% {
+                transform: translateY(0) scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) scale(1.5);
+                opacity: 0;
+            }
+        }
+    `;
+    if (!document.querySelector('style[data-heart]')) {
+        style.setAttribute('data-heart', 'true');
+        document.head.appendChild(style);
+    }
+}
+
+// ==========================================
+// イースターエッグ: 秘密のコマンド
+// ==========================================
+function setupEasterEggs() {
+    let konamiCode = [];
+    const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+    
+    document.addEventListener('keydown', (e) => {
+        konamiCode.push(e.key);
+        konamiCode = konamiCode.slice(-10);
+        
+        if (konamiCode.join(',') === konamiSequence.join(',')) {
+            activatePartyMode();
+            konamiCode = [];
+        }
+    });
+    
+    // "miluna"と入力でイースターエッグ
+    let typedText = '';
+    document.addEventListener('keypress', (e) => {
+        typedText += e.key;
+        typedText = typedText.slice(-6);
+        
+        if (typedText === 'miluna') {
+            createRainbowEffect();
+            typedText = '';
+        }
+    });
+}
+
+// パーティーモード
+function activatePartyMode() {
+    const message = document.createElement('div');
+    message.textContent = '🎉 PARTY MODE ACTIVATED! 🎉';
+    message.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 3rem;
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        z-index: 10001;
+        animation: partyPulse 0.5s ease-in-out 6;
+        pointer-events: none;
+    `;
+    document.body.appendChild(message);
+    
+    // カラフルな紙吹雪
+    for (let i = 0; i < 50; i++) {
+        setTimeout(() => {
+            createConfetti();
+        }, i * 50);
+    }
+    
+    setTimeout(() => message.remove(), 3000);
+    
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes partyPulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.2); }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// 紙吹雪
+function createConfetti() {
+    const confetti = document.createElement('div');
+    const colors = ['#9b59b6', '#3498db', '#e74c3c', '#f39c12', '#2ecc71'];
+    confetti.style.cssText = `
+        position: fixed;
+        top: -10px;
+        left: ${Math.random() * 100}%;
+        width: 10px;
+        height: 10px;
+        background: ${colors[Math.floor(Math.random() * colors.length)]};
+        z-index: 10000;
+        animation: confettiFall ${Math.random() * 3 + 2}s linear forwards;
+        transform: rotate(${Math.random() * 360}deg);
+    `;
+    document.body.appendChild(confetti);
+    
+    setTimeout(() => confetti.remove(), 5000);
+    
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes confettiFall {
+            to {
+                transform: translateY(110vh) rotate(${Math.random() * 360}deg);
+            }
+        }
+    `;
+    if (!document.querySelector('style[data-confetti]')) {
+        style.setAttribute('data-confetti', 'true');
+        document.head.appendChild(style);
+    }
+}
+
+// 虹エフェクト
+function createRainbowEffect() {
+    const rainbow = document.createElement('div');
+    rainbow.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, 
+            rgba(255, 0, 0, 0.3),
+            rgba(255, 127, 0, 0.3),
+            rgba(255, 255, 0, 0.3),
+            rgba(0, 255, 0, 0.3),
+            rgba(0, 0, 255, 0.3),
+            rgba(75, 0, 130, 0.3),
+            rgba(148, 0, 211, 0.3)
+        );
+        pointer-events: none;
+        z-index: 10001;
+        animation: rainbowPulse 2s ease-in-out;
+    `;
+    document.body.appendChild(rainbow);
+    
+    setTimeout(() => rainbow.remove(), 2000);
+    
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes rainbowPulse {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 0.7; }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// ==========================================
+// 画像エラーハンドリング
+// ==========================================
+function setupImageErrorHandling() {
+    const images = document.querySelectorAll('img');
+    
+    images.forEach(img => {
+        img.addEventListener('error', function() {
+            // フォールバック: 猫の絵文字プレースホルダー
+            const placeholder = document.createElement('div');
+            placeholder.style.cssText = `
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: linear-gradient(135deg, rgba(155, 89, 182, 0.3), rgba(52, 152, 219, 0.3));
+                font-size: 5rem;
+            `;
+            placeholder.textContent = '🐱';
+            
+            this.parentElement.style.position = 'relative';
+            this.style.display = 'none';
+            this.parentElement.appendChild(placeholder);
+        });
+    });
+}
+
+// ==========================================
+// ヘルプモーダル
+// ==========================================
+function setupHelpModal() {
+    const helpButton = document.getElementById('helpButton');
+    const helpModal = document.getElementById('helpModal');
+    const helpClose = document.getElementById('helpClose');
+    
+    if (helpButton && helpModal && helpClose) {
+        helpButton.addEventListener('click', () => {
+            helpModal.classList.add('active');
+        });
+        
+        helpClose.addEventListener('click', () => {
+            helpModal.classList.remove('active');
+        });
+        
+        // モーダル外をクリックで閉じる
+        helpModal.addEventListener('click', (e) => {
+            if (e.target === helpModal) {
+                helpModal.classList.remove('active');
+            }
+        });
+        
+        // ESCキーで閉じる
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (helpModal.classList.contains('active')) {
+                    helpModal.classList.remove('active');
+                }
+                if (lightbox.classList.contains('active')) {
+                    closeLightbox();
+                }
+            }
+        });
+    }
+}
+
+// ==========================================
+// ライトボックス（ギャラリー拡大表示）
+// ==========================================
+let lightbox;
+let lightboxImage;
+let lightboxTitle;
+let lightboxDesc;
+let currentImageIndex = 0;
+let galleryImages = [];
+
+function setupLightbox() {
+    lightbox = document.getElementById('lightbox');
+    lightboxImage = document.getElementById('lightboxImage');
+    lightboxTitle = document.getElementById('lightboxTitle');
+    lightboxDesc = document.getElementById('lightboxDesc');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+    
+    // ギャラリーカードを収集
+    const galleryCards = document.querySelectorAll('.gallery-card[data-lightbox]');
+    galleryImages = Array.from(galleryCards);
+    
+    // 各ギャラリーカードにクリックイベント
+    galleryCards.forEach((card, index) => {
+        card.addEventListener('click', () => {
+            currentImageIndex = index;
+            openLightbox(card);
+        });
+    });
+    
+    // 閉じるボタン
+    if (lightboxClose) {
+        lightboxClose.addEventListener('click', closeLightbox);
+    }
+    
+    // 前へボタン
+    if (lightboxPrev) {
+        lightboxPrev.addEventListener('click', showPrevImage);
+    }
+    
+    // 次へボタン
+    if (lightboxNext) {
+        lightboxNext.addEventListener('click', showNextImage);
+    }
+    
+    // 背景クリックで閉じる
+    if (lightbox) {
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+    }
+    
+    // キーボード操作
+    document.addEventListener('keydown', (e) => {
+        if (lightbox && lightbox.classList.contains('active')) {
+            if (e.key === 'ArrowLeft') {
+                showPrevImage();
+            } else if (e.key === 'ArrowRight') {
+                showNextImage();
+            }
+        }
+    });
+}
+
+function openLightbox(card) {
+    const imgSrc = card.dataset.img;
+    const title = card.dataset.title;
+    const desc = card.dataset.desc;
+    
+    lightboxImage.src = imgSrc;
+    lightboxTitle.textContent = title;
+    lightboxDesc.textContent = desc;
+    
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function showPrevImage() {
+    currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+    openLightbox(galleryImages[currentImageIndex]);
+}
+
+function showNextImage() {
+    currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+    openLightbox(galleryImages[currentImageIndex]);
+}
+
+// ==========================================
+// 音楽に合わせて踊る音符（強化版）
+// ==========================================
+function createDancingNotes() {
+    const notes = ['♪', '♫', '♬', '♩', '🎵', '🎶'];
+    
+    setInterval(() => {
+        if (Math.random() > 0.5) {
+            const note = document.createElement('div');
+            const selectedNote = notes[Math.floor(Math.random() * notes.length)];
+            note.textContent = selectedNote;
+            
+            const startX = Math.random() * 100;
+            const endX = startX + (Math.random() * 40 - 20);
+            
+            note.style.cssText = `
+                position: fixed;
+                left: ${startX}%;
+                bottom: -50px;
+                font-size: ${Math.random() * 30 + 20}px;
+                color: rgba(155, 89, 182, ${Math.random() * 0.5 + 0.4});
+                pointer-events: none;
+                z-index: 1;
+                animation: floatUpDance ${Math.random() * 3 + 4}s ease-out forwards;
+            `;
+            note.style.setProperty('--end-x', `${endX}%`);
+            
+            document.body.appendChild(note);
+            
+            setTimeout(() => note.remove(), 7000);
+        }
+    }, 2000);
+    
+    // CSS アニメーション追加
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes floatUpDance {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(0);
+                opacity: 0;
+                left: var(--start-x, 50%);
+            }
+            10% {
+                opacity: 1;
+                transform: translateY(-10vh) rotate(${Math.random() * 360}deg) scale(1);
+            }
+            50% {
+                transform: translateY(-50vh) rotate(${Math.random() * 720}deg) scale(1.2);
+                left: var(--end-x, 50%);
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(${Math.random() * 1080}deg) scale(0.8);
+                opacity: 0;
+                left: var(--end-x, 50%);
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// ==========================================
 // 初期化
 // ==========================================
 function init() {
@@ -367,7 +1049,20 @@ function init() {
     setupScrollProgress();
     setupActiveSection();
     
+    // 新しい遊び心のある機能
+    createDancingNotes(); // 強化版の音符
+    setupConstellationDrawing();
+    createAnimatedMiluna();
+    setupEasterEggs();
+    setupImageErrorHandling();
+    setupHelpModal();
+    setupLightbox(); // ライトボックス
+    
     console.log('🌟 ミルナのWebサイトへようこそ！ 🌙');
+    console.log('💡 ヒント: 「miluna」とタイプしてみてください！');
+    console.log('💡 ヒント: 画面をダブルクリックして星座を描いてみてください！');
+    console.log('💡 ヒント: 歩いている猫をクリックしてみてください！');
+    console.log('💡 ヒント: ギャラリーの画像をクリックして拡大表示！');
 }
 
 // DOMが読み込まれたら初期化

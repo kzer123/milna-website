@@ -26,6 +26,20 @@
                 <li><a href="#gallery">ギャラリー</a></li>
                 <li><a href="#story">ストーリー</a></li>
                 <li><a href="#contact">コンタクト</a></li>
+                <li class="nav-social">
+                    <a href="https://twitter.com" target="_blank" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://discord.com" target="_blank" title="Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a href="mailto:miluna@example.com" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </li>
             </ul>
             <div class="nav-toggle" id="navToggle">
                 <span></span>
@@ -44,8 +58,9 @@
             <h1 class="hero-title">
                 <span class="glitch" data-text="ミルナ">ミルナ</span>
             </h1>
-            <p class="hero-subtitle">〜 銀河と月の黒猫 〜</p>
-            <p class="hero-description">Milky Way ✕ Luna</p>
+            <p class="hero-subtitle">〜 銀河のメロディに乗せて 〜</p>
+            <p class="hero-description">♪ 星空を奏でる黒猫 ♪</p>
+            <p class="hero-tagline">Milky Way ✕ Luna ✕ Music</p>
             <div class="hero-buttons">
                 <a href="#about" class="btn btn-primary">
                     <i class="fas fa-paw"></i> もっと知る
@@ -131,33 +146,62 @@
             </h2>
             <div class="gallery-grid">
                 <div class="gallery-item" data-aos="fade-up">
-                    <div class="gallery-card">
+                    <div class="gallery-card" data-lightbox="gallery" data-img="https://www.genspark.ai/api/files/s/NooiHxkv" data-title="ミルナ" data-desc="青空の下で">
                         <img src="img/milna-top.jpg" alt="ミルナ">
                         <div class="gallery-overlay">
-                            <h3>ミルナ</h3>
-                            <p>青空の下で</p>
+                            <div class="gallery-info">
+                                <h3>ミルナ</h3>
+                                <p>青空の下で</p>
+                            </div>
+                            <div class="gallery-expand">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
                     <div class="gallery-card placeholder">
                         <div class="placeholder-content">
-                            <i class="fas fa-camera"></i>
-                            <p>Coming Soon</p>
+                            <i class="fas fa-music"></i>
+                            <p>Music Collection</p>
+                            <span>Coming Soon</span>
                         </div>
                     </div>
                 </div>
                 <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
                     <div class="gallery-card placeholder">
                         <div class="placeholder-content">
-                            <i class="fas fa-camera"></i>
-                            <p>Coming Soon</p>
+                            <i class="fas fa-headphones"></i>
+                            <p>Behind the Scenes</p>
+                            <span>Coming Soon</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- ライトボックスモーダル -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <button class="lightbox-prev" id="lightboxPrev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="lightbox-next" id="lightboxNext">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="lightbox-image-container">
+                <img id="lightboxImage" src="" alt="">
+            </div>
+            <div class="lightbox-info">
+                <h3 id="lightboxTitle"></h3>
+                <p id="lightboxDesc"></p>
+            </div>
+        </div>
+    </div>
 
     <!-- ストーリーセクション -->
     <section class="story" id="story">
@@ -171,21 +215,21 @@
                         <i class="fas fa-meteor"></i>
                     </div>
                     <h3>誕生</h3>
-                    <p>遥か彼方の銀河の彼方、星屑が舞う宇宙の果てで、ミルナは生まれました。ミルキーウェイの輝きとルナの優しさを受け継いだ、特別な黒猫の男の子です。</p>
+                    <p>遥か彼方の銀河の彼方、星屑が舞う宇宙の果てで、ミルナは生まれました。ミルキーウェイの輝きとルナの優しさ、そして宇宙の音楽を受け継いだ、特別な黒猫の男の子です。</p>
                 </div>
                 <div class="story-card">
                     <div class="story-icon">
-                        <i class="fas fa-rocket"></i>
+                        <i class="fas fa-music"></i>
                     </div>
-                    <h3>冒険</h3>
-                    <p>好奇心旺盛なミルナは、様々な星々を旅します。額に輝く紫色のストライプは、彼の冒険の証。思慮深く、でも遊び心を忘れない彼の旅は続きます。</p>
+                    <h3>音楽との出会い</h3>
+                    <p>星々の煌めきから生まれる音楽、それがミルナの一番の友達。彼の耳には宇宙のメロディが聞こえ、いつも心に歌を持っています。音楽があれば、どんな困難も乗り越えられる。</p>
                 </div>
                 <div class="story-card">
                     <div class="story-icon">
                         <i class="fas fa-heart"></i>
                     </div>
                     <h3>出会い</h3>
-                    <p>地球にやってきたミルナは、たくさんの友達と出会いました。青い空の下で、彼の冒険は新しい章を迎えます。あなたもミルナの友達になりませんか？</p>
+                    <p>地球にやってきたミルナは、たくさんの友達と出会いました。青い空の下で、彼の冒険は新しい章を迎えます。音楽と共に、あなたもミルナの友達になりませんか？</p>
                 </div>
             </div>
         </div>
@@ -214,10 +258,10 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-puzzle-piece"></i>
+                        <i class="fas fa-headphones"></i>
                     </div>
-                    <h3>遊び心</h3>
-                    <p>いつも楽しさを忘れない陽気な性格</p>
+                    <h3>音楽の才能</h3>
+                    <p>宇宙のメロディを奏でる音楽好きな黒猫</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -273,6 +317,59 @@
             </div>
         </div>
     </footer>
+
+    <!-- 遊び方ガイド（フローティングヒント） -->
+    <div class="help-button" id="helpButton">
+        <i class="fas fa-question-circle"></i>
+    </div>
+    
+    <div class="help-modal" id="helpModal">
+        <div class="help-content">
+            <div class="help-header">
+                <h3>🎮 遊び方ガイド</h3>
+                <button class="help-close" id="helpClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="help-body">
+                <div class="help-item">
+                    <div class="help-icon">🐾</div>
+                    <div class="help-text">
+                        <strong>猫の足跡</strong>
+                        <p>マウスを動かすと、ミルナの足跡が残ります</p>
+                    </div>
+                </div>
+                <div class="help-item">
+                    <div class="help-icon">🐱</div>
+                    <div class="help-text">
+                        <strong>歩くミルナ</strong>
+                        <p>画面下を歩いているミルナをクリックしてみよう！</p>
+                    </div>
+                </div>
+                <div class="help-item">
+                    <div class="help-icon">⭐</div>
+                    <div class="help-text">
+                        <strong>星座を描く</strong>
+                        <p>画面をダブルクリックして自分だけの星座を作ろう</p>
+                    </div>
+                </div>
+                <div class="help-item">
+                    <div class="help-icon">🎵</div>
+                    <div class="help-text">
+                        <strong>音符のダンス</strong>
+                        <p>画面に現れる音符を眺めて楽しもう</p>
+                    </div>
+                </div>
+                <div class="help-item">
+                    <div class="help-icon">🎪</div>
+                    <div class="help-text">
+                        <strong>秘密のコマンド</strong>
+                        <p>「miluna」とキーボードでタイプしてみてね</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="js/main.js"></script>
 </body>
