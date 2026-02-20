@@ -6,6 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="ミルナ - 黒猫の男の子のキャラクターサイト。銀河と月から名付けられた遊び心あふれるキャラクター">
     <title>ミルナ - Miluna the Black Cat</title>
+    <!-- OGP -->
+    <meta property="og:title" content="ミルナ - Miluna the Black Cat">
+    <meta property="og:description" content="銀河と月から名付けられた黒猫の男の子、ミルナの公式サイト。星空を奏でる音楽好きなキャラクター。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/character.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ミルナ - Miluna the Black Cat">
+    <meta name="twitter:description" content="銀河と月から名付けられた黒猫の男の子、ミルナの公式サイト。">
+    <meta name="twitter:image" content="img/character.jpg">
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐱</text></svg>"
+        type="image/svg+xml">
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;600;700&display=swap"
         rel="stylesheet">
@@ -40,13 +53,14 @@
                 <li><a href="#story">ストーリー</a></li>
                 <li><a href="#contact">コンタクト</a></li>
                 <li class="nav-social">
-                    <a href="https://x.com/milna9625" target="_blank" title="X">
+                    <a href="https://x.com/milna9625" target="_blank" rel="noopener noreferrer" title="X">
                         <i class="fab fa-x"></i>
                     </a>
-                    <a href="https://instagram.com/milna.9625" target="_blank" title="Instagram">
+                    <a href="https://instagram.com/milna.9625" target="_blank" rel="noopener noreferrer"
+                        title="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://discord.com" target="_blank" title="Discord">
+                    <a href="https://discord.com" target="_blank" rel="noopener noreferrer" title="Discord">
                         <i class="fab fa-discord"></i>
                     </a>
                     <a href="mailto:9625@milna-world.com" title="Email">
@@ -54,7 +68,8 @@
                     </a>
                 </li>
             </ul>
-            <div class="nav-toggle" id="navToggle">
+            <div class="nav-toggle" id="navToggle" role="button" aria-label="メニューを開く" aria-expanded="false"
+                tabindex="0">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -71,9 +86,9 @@
             <h1 class="hero-title">
                 <span class="glitch" data-text="ミルナ">ミルナ</span>
             </h1>
-            <p class="hero-subtitle">〜 銀河のメロディに乗せて 〜</p>
-            <p class="hero-description">♪ 星空を奏でる黒猫 ♪</p>
-            <p class="hero-tagline">Milky Way ✕ Luna ✕ Music</p>
+            <p class="hero-subtitle">〜 にゃんと不思議な星空さんぽ 〜</p>
+            <p class="hero-description">🐾 宇宙からやってきた音楽猫 🐾</p>
+            <p class="hero-tagline">Galaxy Cat × Cosmic Sound</p>
             <div class="hero-buttons">
                 <a href="#about" class="btn btn-primary">
                     <i class="fas fa-paw"></i> もっと知る
@@ -83,7 +98,7 @@
                 </a>
             </div>
         </div>
-        <div class="scroll-indicator">
+        <div class="scroll-indicator" id="scrollIndicator">
             <div class="mouse">
                 <div class="wheel"></div>
             </div>
@@ -198,13 +213,13 @@
     <!-- ライトボックスモーダル -->
     <div class="lightbox" id="lightbox">
         <div class="lightbox-content">
-            <button class="lightbox-close" id="lightboxClose">
+            <button class="lightbox-close" id="lightboxClose" aria-label="閉じる">
                 <i class="fas fa-times"></i>
             </button>
-            <button class="lightbox-prev" id="lightboxPrev">
+            <button class="lightbox-prev" id="lightboxPrev" aria-label="前の画像">
                 <i class="fas fa-chevron-left"></i>
             </button>
-            <button class="lightbox-next" id="lightboxNext">
+            <button class="lightbox-next" id="lightboxNext" aria-label="次の画像">
                 <i class="fas fa-chevron-right"></i>
             </button>
             <div class="lightbox-image-container">
@@ -297,14 +312,17 @@
             <div class="contact-content">
                 <p class="contact-description">ミルナについてもっと知りたい方、お友達になりたい方は<br>お気軽にメッセージをお送りください！</p>
                 <div class="social-links">
-                    <a href="https://x.com/milna9625" class="social-link" title="X">
+                    <a href="https://x.com/milna9625" class="social-link" target="_blank" rel="noopener noreferrer"
+                        title="X">
                         <i class="fab fa-x"></i>
                     </a>
-                    <a href="https://instagram.com/milna.9625" class="social-link" title="Instagram">
+                    <a href="https://instagram.com/milna.9625" class="social-link" target="_blank"
+                        rel="noopener noreferrer" title="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="#" class="social-link" title="Discord">
-                        <i class="fab fa-tiktok"></i>
+                    <a href="https://discord.com" class="social-link" target="_blank" rel="noopener noreferrer"
+                        title="Discord">
+                        <i class="fab fa-discord"></i>
                     </a>
                     <a href="mailto:9625@milna-world.com" class="social-link" title="Email">
                         <i class="fas fa-envelope"></i>
@@ -333,7 +351,7 @@
     </footer>
 
     <!-- 遊び方ガイド（フローティングヒント） -->
-    <div class="help-button" id="helpButton">
+    <div class="help-button" id="helpButton" role="button" aria-label="遊び方ガイドを開く" tabindex="0">
         <i class="fas fa-question-circle"></i>
     </div>
 
