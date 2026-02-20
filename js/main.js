@@ -737,6 +737,52 @@ function showNextImage() {
 }
 
 // ==========================================
+// ギャラリーフィルター
+// ==========================================
+function setupGalleryFilter() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item[data-category]');
+
+    if (!filterBtns.length || !galleryItems.length) return;
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // アクティブボタン切り替え
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.dataset.filter;
+
+            // フェードアウト
+            galleryItems.forEach(item => {
+                item.classList.add('fade-out');
+            });
+
+            // フェードアウト後に表示/非表示を切り替え
+            setTimeout(() => {
+                galleryItems.forEach(item => {
+                    const category = item.dataset.category;
+                    if (filter === 'all' || category === filter) {
+                        item.classList.remove('hidden', 'fade-out');
+                        // フェードイン
+                        requestAnimationFrame(() => {
+                            item.classList.add('fade-in');
+                        });
+                    } else {
+                        item.classList.add('hidden');
+                        item.classList.remove('fade-out', 'fade-in');
+                    }
+                });
+
+                // ライトボックスの画像リストを更新
+                const visibleCards = document.querySelectorAll('.gallery-item:not(.hidden) .gallery-card[data-lightbox]');
+                galleryImages = Array.from(visibleCards);
+            }, 300);
+        });
+    });
+}
+
+// ==========================================
 // 音楽に合わせて踊る音符（強化版）
 // ==========================================
 function createDancingNotes() {
@@ -982,6 +1028,7 @@ function init() {
     setupImageErrorHandling();
     setupHelpModal();
     setupLightbox();
+    setupGalleryFilter();
 
     console.log('🌟 ミルナのWebサイトへようこそ！ 🌙');
     console.log('💡 ヒント: 「miluna」とタイプしてみてください！');

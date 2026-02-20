@@ -172,15 +172,27 @@
             <h2 class="section-title">
                 <i class="fas fa-images"></i> ギャラリー
             </h2>
-            <div class="gallery-grid">
-                <div class="gallery-item" data-aos="fade-up">
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th"></i> すべて
+                </button>
+                <button class="filter-btn" data-filter="event">
+                    <i class="fas fa-star"></i> イベント
+                </button>
+                <button class="filter-btn" data-filter="daily">
+                    <i class="fas fa-couch"></i> 日常
+                </button>
+            </div>
+            <div class="gallery-grid gallery-masonry">
+                <!-- メインビジュアル -->
+                <div class="gallery-item gallery-item-wide" data-category="daily" data-aos="fade-up">
                     <div class="gallery-card" data-lightbox="gallery" data-img="img/character.jpg" data-title="ミルナ"
-                        data-desc="青空の下で">
-                        <img src="img/character.jpg" alt="ミルナ">
+                        data-desc="メインビジュアル">
+                        <img src="img/character.jpg" alt="ミルナ - メインビジュアル" loading="lazy">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
                                 <h3>ミルナ</h3>
-                                <p>青空の下で</p>
+                                <p>メインビジュアル</p>
                             </div>
                             <div class="gallery-expand">
                                 <i class="fas fa-search-plus"></i>
@@ -188,21 +200,218 @@
                         </div>
                     </div>
                 </div>
-                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="gallery-card placeholder">
-                        <div class="placeholder-content">
-                            <i class="fas fa-music"></i>
-                            <p>Music Collection</p>
-                            <span>Coming Soon</span>
+                <!-- イベント写真 (かいさん撮影) -->
+                <div class="gallery-item" data-category="event" data-aos="fade-up" data-aos-delay="100">
+                    <div class="gallery-card" data-lightbox="gallery" data-img="img/かいさん/ITN_7250.jpg"
+                        data-title="堂々のポーズ" data-desc="イベント会場にて ・ 📷 かいさん">
+                        <img src="img/かいさん/ITN_7250.jpg" alt="ミルナ - 堂々のポーズ" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>堂々のポーズ</h3>
+                                <p>📷 かいさん</p>
+                            </div>
+                            <div class="gallery-expand">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="gallery-card placeholder">
-                        <div class="placeholder-content">
-                            <i class="fas fa-headphones"></i>
-                            <p>Behind the Scenes</p>
-                            <span>Coming Soon</span>
+                <div class="gallery-item" data-category="event" data-aos="fade-up" data-aos-delay="150">
+                    <div class="gallery-card" data-lightbox="gallery" data-img="img/かいさん/ITN_7253.jpg"
+                        data-title="はにかみポーズ" data-desc="イベント会場にて ・ 📷 かいさん">
+                        <img src="img/かいさん/ITN_7253.jpg" alt="ミルナ - はにかみポーズ" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>はにかみポーズ</h3>
+                                <p>📷 かいさん</p>
+                            </div>
+                            <div class="gallery-expand">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item gallery-item-tall" data-category="event" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <div class="gallery-card" data-lightbox="gallery" data-img="img/かいさん/ITN_7256.jpg"
+                        data-title="にゃんこの手" data-desc="イベント会場にて ・ 📷 かいさん">
+                        <img src="img/かいさん/ITN_7256.jpg" alt="ミルナ - にゃんこの手" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>にゃんこの手</h3>
+                                <p>📷 かいさん</p>
+                            </div>
+                            <div class="gallery-expand">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="event" data-aos="fade-up" data-aos-delay="250">
+                    <div class="gallery-card" data-lightbox="gallery" data-img="img/かいさん/ITN_7257.jpg"
+                        data-title="アップショット" data-desc="紫のストライプがキラリ ・ 📷 かいさん">
+                        <img src="img/かいさん/ITN_7257.jpg" alt="ミルナ - アップショット" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>アップショット</h3>
+                                <p>📷 かいさん</p>
+                            </div>
+                            <div class="gallery-expand">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 日常写真 (じろー撮影) -->
+                <div class="gallery-item" data-category="daily" data-aos="fade-up" data-aos-delay="100">
+                    <div class="gallery-card" data-lightbox="gallery" data-img="img/じろー/2025-09-06_14-14-15_850.jpg"
+                        data-title="ごろにゃん" data-desc="ソファでくつろぎタイム ・ 📷 じろー">
+                        <img src="img/じろー/2025-09-06_14-14-15_850.jpg" alt="ミルナ - ごろにゃん" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>ごろにゃん</h3>
+                                <p>📷 じろー</p>
+                            </div>
+                            <div class="gallery-expand">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item gallery-item-wide" data-category="daily" data-aos="fade-up"
+                    data-aos-delay="150">
+                    <div class="gallery-card" data-lightbox="gallery" data-img="img/じろー/2025-09-06_14-14-46_950.jpg"
+                        data-title="おすわり" data-desc="お気に入りのソファで ・ 📷 じろー">
+                        <img src="img/じろー/2025-09-06_14-14-46_950.jpg" alt="ミルナ - おすわり" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>おすわり</h3>
+                                <p>📷 じろー</p>
+                            </div>
+                            <div class="gallery-expand">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="daily" data-aos="fade-up" data-aos-delay="200">
+                    <div class="gallery-card" data-lightbox="gallery" data-img="img/じろー/2025-09-06_14-18-15_770.jpg"
+                        data-title="見上げて" data-desc="天井を見上げるミルナ ・ 📷 じろー">
+                        <img src="img/じろー/2025-09-06_14-18-15_770.jpg" alt="ミルナ - 見上げて" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>見上げて</h3>
+                                <p>📷 じろー</p>
+                            </div>
+                            <div class="gallery-expand">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item gallery-item-tall" data-category="daily" data-aos="fade-up"
+                    data-aos-delay="250">
+                    <div class="gallery-card" data-lightbox="gallery" data-img="img/じろー/2025-09-06_14-53-21_840.jpg"
+                        data-title="階段でパチリ" data-desc="ちょっと斜めのアングルで ・ 📷 じろー">
+                        <img src="img/じろー/2025-09-06_14-53-21_840.jpg" alt="ミルナ - 階段でパチリ" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>階段でパチリ</h3>
+                                <p>📷 じろー</p>
+                            </div>
+                            <div class="gallery-expand">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="daily" data-aos="fade-up" data-aos-delay="300">
+                    <div class="gallery-card" data-lightbox="gallery" data-img="img/じろー/2025-09-06_14-14-27_560.jpg"
+                        data-title="まったり" data-desc="のんびりタイム ・ 📷 じろー">
+                        <img src="img/じろー/2025-09-06_14-14-27_560.jpg" alt="ミルナ - まったり" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>まったり</h3>
+                                <p>📷 じろー</p>
+                            </div>
+                            <div class="gallery-expand">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="daily" data-aos="fade-up" data-aos-delay="350">
+                    <div class="gallery-card" data-lightbox="gallery" data-img="img/じろー/2025-09-06_14-15-53_540.jpg"
+                        data-title="ちょこん" data-desc="おりこうさん ・ 📷 じろー">
+                        <img src="img/じろー/2025-09-06_14-15-53_540.jpg" alt="ミルナ - ちょこん" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>ちょこん</h3>
+                                <p>📷 じろー</p>
+                            </div>
+                            <div class="gallery-expand">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="daily" data-aos="fade-up" data-aos-delay="400">
+                    <div class="gallery-card" data-lightbox="gallery" data-img="img/じろー/2025-09-06_14-17-07_780.jpg"
+                        data-title="にゃ？" data-desc="なにか気になる ・ 📷 じろー">
+                        <img src="img/じろー/2025-09-06_14-17-07_780.jpg" alt="ミルナ - にゃ？" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>にゃ？</h3>
+                                <p>📷 じろー</p>
+                            </div>
+                            <div class="gallery-expand">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="daily" data-aos="fade-up" data-aos-delay="450">
+                    <div class="gallery-card" data-lightbox="gallery" data-img="img/じろー/2025-09-06_14-18-43_170.jpg"
+                        data-title="リラックス" data-desc="くつろぎモード全開 ・ 📷 じろー">
+                        <img src="img/じろー/2025-09-06_14-18-43_170.jpg" alt="ミルナ - リラックス" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>リラックス</h3>
+                                <p>📷 じろー</p>
+                            </div>
+                            <div class="gallery-expand">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="daily" data-aos="fade-up" data-aos-delay="500">
+                    <div class="gallery-card" data-lightbox="gallery" data-img="img/じろー/2025-09-06_14-26-53_190.jpg"
+                        data-title="お散歩" data-desc="おでかけミルナ ・ 📷 じろー">
+                        <img src="img/じろー/2025-09-06_14-26-53_190.jpg" alt="ミルナ - お散歩" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>お散歩</h3>
+                                <p>📷 じろー</p>
+                            </div>
+                            <div class="gallery-expand">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="daily" data-aos="fade-up" data-aos-delay="550">
+                    <div class="gallery-card" data-lightbox="gallery" data-img="img/じろー/2025-09-06_14-53-33_630.jpg"
+                        data-title="もう一枚" data-desc="ナイスアングル ・ 📷 じろー">
+                        <img src="img/じろー/2025-09-06_14-53-33_630.jpg" alt="ミルナ - もう一枚" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>もう一枚</h3>
+                                <p>📷 じろー</p>
+                            </div>
+                            <div class="gallery-expand">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
