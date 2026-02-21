@@ -731,7 +731,7 @@ section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-md);
-    grid-auto-rows: 280px;
+    grid-auto-rows: 250px;
     align-items: stretch;
 }
 
@@ -759,19 +759,17 @@ section {
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
+/* .gallery-grid は .gallery-masonry と併用時、masonry側を優先 */
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-md);
 }
 
 .gallery-item {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 1;
     height: 100%;
     min-height: 0;
     overflow: hidden;
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .gallery-card {
