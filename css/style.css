@@ -732,6 +732,7 @@ section {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-md);
     grid-auto-rows: 280px;
+    align-items: stretch;
 }
 
 .gallery-item-wide {
@@ -768,6 +769,9 @@ section {
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 0.6s ease-out forwards;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
 }
 
 .gallery-card {
@@ -776,7 +780,7 @@ section {
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     transition: var(--transition-smooth);
-    aspect-ratio: 1;
+    height: 100%;
     cursor: pointer;
 }
 
@@ -1544,7 +1548,8 @@ section {
     }
 
     .gallery-masonry .gallery-card {
-        aspect-ratio: 4/3;
+        height: auto;
+        min-height: 250px;
     }
 
     .gallery-filters {
