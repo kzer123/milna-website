@@ -45,6 +45,26 @@ body {
     overflow-x: hidden;
 }
 
+/* スキップリンク（アクセシビリティ） */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0 0 8px 8px;
+    z-index: 10000;
+    text-decoration: none;
+    font-weight: 600;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;

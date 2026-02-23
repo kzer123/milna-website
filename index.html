@@ -4,26 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ミルナ - 黒猫の男の子のキャラクターサイト。銀河と月から名付けられた遊び心あふれるキャラクター">
-    <title>ミルナ - Miluna the Black Cat</title>
+    <meta name="description"
+        content="ミルナ（Miluna）公式サイト｜銀河（ミルキーウェイ）と月（ルナ）から名付けられた黒猫の男の子のファーキャラクター。星空を奏でる音楽好きなキャラクターの世界をお楽しみください。">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0a0a1a">
+    <title>ミルナ - Miluna the Black Cat｜銀河と月の黒猫キャラクター公式サイト</title>
+    <link rel="canonical" href="https://milna-world.com/">
     <!-- OGP -->
-    <meta property="og:title" content="ミルナ - Miluna the Black Cat">
-    <meta property="og:description" content="銀河と月から名付けられた黒猫の男の子、ミルナの公式サイト。星空を奏でる音楽好きなキャラクター。">
+    <meta property="og:title" content="ミルナ - Miluna the Black Cat｜銀河と月の黒猫キャラクター">
+    <meta property="og:description" content="銀河と月から名付けられた黒猫の男の子、ミルナの公式サイト。星空を奏でる音楽好きなファーキャラクターの世界をお楽しみください。">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="img/character.jpg">
+    <meta property="og:url" content="https://milna-world.com/">
+    <meta property="og:image" content="https://milna-world.com/img/character.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="ミルナ - Miluna the Black Cat">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ミルナ - Miluna the Black Cat">
     <meta name="twitter:description" content="銀河と月から名付けられた黒猫の男の子、ミルナの公式サイト。">
-    <meta name="twitter:image" content="img/character.jpg">
+    <meta name="twitter:image" content="https://milna-world.com/img/character.jpg">
     <!-- Favicon -->
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐱</text></svg>"
         type="image/svg+xml">
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <!-- 構造化データ (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "ミルナ - Miluna the Black Cat",
+        "url": "https://milna-world.com/",
+        "description": "銀河と月から名付けられた黒猫の男の子、ミルナの公式サイト",
+        "inLanguage": "ja"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "ミルナ (Miluna)",
+        "description": "ミルキーウェイ（銀河）とルナ（月）から名付けられた黒猫の男の子のファーキャラクター。星空を奏でる音楽好きなキャラクター。",
+        "image": "https://milna-world.com/img/character.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "Miluna Project"
+        },
+        "genre": "ファーキャラクター",
+        "keywords": "ミルナ, Miluna, 黒猫, ファーキャラクター, 銀河, 月"
+    }
+    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ0ERLF5ZD"></script>
     <script>
@@ -36,11 +75,14 @@
 </head>
 
 <body>
+    <!-- スキップリンク -->
+    <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+
     <!-- 星空背景 -->
-    <div class="stars-background" id="starsBackground"></div>
+    <div class="stars-background" id="starsBackground" aria-hidden="true"></div>
 
     <!-- ナビゲーション -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="メインナビゲーション">
         <div class="nav-container">
             <div class="nav-logo">
                 <i class="fas fa-cat"></i>
@@ -77,619 +119,624 @@
         </div>
     </nav>
 
-    <!-- ヒーローセクション -->
-    <header class="hero" id="home">
-        <div class="hero-content">
-            <div class="moon-container">
-                <div class="moon"></div>
+    <main id="main-content">
+        <!-- ヒーローセクション -->
+        <header class="hero" id="home">
+            <div class="hero-content">
+                <div class="moon-container" aria-hidden="true">
+                    <div class="moon"></div>
+                </div>
+                <h1 class="hero-title">
+                    <span class="glitch" data-text="ミルナ">ミルナ</span>
+                </h1>
+                <p class="hero-subtitle">〜 にゃんと不思議な星空さんぽ 〜</p>
+                <p class="hero-description">🐾 宇宙からやってきた音楽猫 🐾</p>
+                <p class="hero-tagline">Galaxy Cat × Cosmic Sound</p>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn btn-primary">
+                        <i class="fas fa-paw"></i> もっと知る
+                    </a>
+                    <a href="#gallery" class="btn btn-secondary">
+                        <i class="fas fa-images"></i> ギャラリー
+                    </a>
+                </div>
             </div>
-            <h1 class="hero-title">
-                <span class="glitch" data-text="ミルナ">ミルナ</span>
-            </h1>
-            <p class="hero-subtitle">〜 にゃんと不思議な星空さんぽ 〜</p>
-            <p class="hero-description">🐾 宇宙からやってきた音楽猫 🐾</p>
-            <p class="hero-tagline">Galaxy Cat × Cosmic Sound</p>
-            <div class="hero-buttons">
-                <a href="#about" class="btn btn-primary">
-                    <i class="fas fa-paw"></i> もっと知る
-                </a>
-                <a href="#gallery" class="btn btn-secondary">
+            <div class="scroll-indicator" id="scrollIndicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <p>スクロール</p>
+            </div>
+        </header>
+
+        <!-- プロフィールセクション -->
+        <section class="about" id="about">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-star"></i> プロフィール
+                </h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <div class="image-frame">
+                            <img src="img/character.jpg" alt="ミルナ - 銀河と月から名付けられた黒猫のファーキャラクター。ブルーの瞳と紫色のストライプが特徴"
+                                width="600" height="600">
+                            <div class="image-overlay"></div>
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <h3>ミルナについて</h3>
+                        <div class="profile-info">
+                            <div class="info-item">
+                                <i class="fas fa-signature"></i>
+                                <div>
+                                    <strong>名前</strong>
+                                    <p>ミルナ (Miluna)</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-venus-mars"></i>
+                                <div>
+                                    <strong>性別</strong>
+                                    <p>男の子</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-palette"></i>
+                                <div>
+                                    <strong>種族</strong>
+                                    <p>黒猫（ファーキャラクター）</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-book"></i>
+                                <div>
+                                    <strong>名前の由来</strong>
+                                    <p>ミルキーウェイ（銀河）+ ルナ（月）</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="features">
+                            <h4><i class="fas fa-sparkles"></i> 特徴</h4>
+                            <ul>
+                                <li>✨ 額に輝く紫色のストライプ</li>
+                                <li>🌙 大きな白と黒の耳</li>
+                                <li>💙 魅力的なブルーの瞳</li>
+                                <li>🌌 ダークグレーとブラックの毛並み</li>
+                                <li>🐾 思慮深く遊び心のある性格</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ギャラリーセクション -->
+        <section class="gallery" id="gallery">
+            <div class="container">
+                <h2 class="section-title">
                     <i class="fas fa-images"></i> ギャラリー
-                </a>
-            </div>
-        </div>
-        <div class="scroll-indicator" id="scrollIndicator">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-            <p>スクロール</p>
-        </div>
-    </header>
+                </h2>
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all" aria-pressed="true">
+                        <i class="fas fa-th" aria-hidden="true"></i> すべて
+                    </button>
+                    <button class="filter-btn" data-filter="event" aria-pressed="false">
+                        <i class="fas fa-star" aria-hidden="true"></i> イベント
+                    </button>
+                    <button class="filter-btn" data-filter="outdoor" aria-pressed="false">
+                        <i class="fas fa-umbrella-beach" aria-hidden="true"></i> アウトドア
+                    </button>
+                    <button class="filter-btn" data-filter="daily" aria-pressed="false">
+                        <i class="fas fa-couch" aria-hidden="true"></i> 日常
+                    </button>
+                </div>
+                <div class="gallery-grid gallery-masonry">
+                    <!-- メインビジュアル -->
+                    <div class="gallery-item" data-category="daily" data-aos="fade-up">
+                        <div class="gallery-card" data-lightbox="gallery" data-img="img/character.jpg" data-title="ミルナ"
+                            data-desc="メインビジュアル">
+                            <img src="img/character.jpg" alt="ミルナ - メインビジュアル" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>ミルナ</h3>
+                                    <p>メインビジュアル</p>
+                                </div>
+                                <div class="gallery-expand">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-    <!-- プロフィールセクション -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2 class="section-title">
-                <i class="fas fa-star"></i> プロフィール
-            </h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <div class="image-frame">
-                        <img src="img/character.jpg" alt="ミルナ - 黒猫の男の子">
-                        <div class="image-overlay"></div>
+                    <!-- アウトドア写真 (yoshi撮影) -->
+                    <div class="gallery-item" data-category="outdoor" data-aos="fade-up" data-aos-delay="50">
+                        <div class="gallery-card" data-lightbox="gallery"
+                            data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_8.webp" data-title="海辺で万歳"
+                            data-desc="砂浜で元気いっぱい ・ 📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_8.webp" alt="ミルナ - 海辺で万歳" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>海辺で万歳</h3>
+                                    <p>📷 yoshiさん</p>
+                                </div>
+                                <div class="gallery-expand">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="outdoor" data-aos="fade-up" data-aos-delay="100">
+                        <div class="gallery-card" data-lightbox="gallery"
+                            data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_11.webp" data-title="青空の下で"
+                            data-desc="澄み渡る空と一緒に ・ 📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_11.webp" alt="ミルナ - 青空の下で" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>青空の下で</h3>
+                                    <p>📷 yoshiさん</p>
+                                </div>
+                                <div class="gallery-expand">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="outdoor" data-aos="fade-up" data-aos-delay="150">
+                        <div class="gallery-card" data-lightbox="gallery" data-img="img/shota/DSC_5665.webp"
+                            data-title="イベントに参加" data-desc="ビーチで手を挙げて ・ 📷 shotaさん">
+                            <img src="img/shota/DSC_5665.webp" alt="ミルナ - イベントに参加" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>イベントに参加</h3>
+                                    <p>📷 shotaさん</p>
+                                </div>
+                                <div class="gallery-expand">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 日常写真 (じろー撮影) -->
+                    <div class="gallery-item" data-category="daily" data-aos="fade-up" data-aos-delay="200">
+                        <div class="gallery-card" data-lightbox="gallery"
+                            data-img="img/じろー/2025-09-06_14-14-15_850.webp" data-title="お座りミルナ"
+                            data-desc="ちょこんとお座り ・ 📷 じろーさん">
+                            <img src="img/じろー/2025-09-06_14-14-15_850.webp" alt="ミルナ - お座りミルナ" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>お座りミルナ</h3>
+                                    <p>📷 じろーさん</p>
+                                </div>
+                                <div class="gallery-expand">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 日常写真 (たちつてお撮影) -->
+                    <div class="gallery-item" data-category="daily" data-aos="fade-up" data-aos-delay="250">
+                        <div class="gallery-card" data-lightbox="gallery" data-img="img/たちつてお/73A00047_Original.webp"
+                            data-title="カフェタイム" data-desc="窓辺でくつろぎ ・ 📷 たちつておさん">
+                            <img src="img/たちつてお/73A00047_Original.webp" alt="ミルナ - カフェタイム" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>カフェタイム</h3>
+                                    <p>📷 たちつておさん</p>
+                                </div>
+                                <div class="gallery-expand">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- イベント写真 (かいさん撮影) -->
+                    <div class="gallery-item" data-category="event" data-aos="fade-up" data-aos-delay="300">
+                        <div class="gallery-card" data-lightbox="gallery" data-img="img/かいさん/ITN_7250.webp"
+                            data-title="イベント会場" data-desc="華やかなステージの裏側で ・ 📷 かいさん">
+                            <img src="img/かいさん/ITN_7250.webp" alt="ミルナ - イベント会場" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>イベント会場</h3>
+                                    <p>📷 かいさん</p>
+                                </div>
+                                <div class="gallery-expand">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- アウトドア写真 (yoshi撮影) -->
+                    <div class="gallery-item" data-category="outdoor" data-aos="fade-up" data-aos-delay="50">
+                        <div class="gallery-card" data-lightbox="gallery"
+                            data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_3.webp" data-title="海辺のお散歩"
+                            data-desc="波打ち際でのんびり ・ 📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_3.webp" alt="ミルナ - 海辺のお散歩" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>海辺のお散歩</h3>
+                                    <p>📷 yoshiさん</p>
+                                </div>
+                                <div class="gallery-expand">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="outdoor" data-aos="fade-up" data-aos-delay="100">
+                        <div class="gallery-card" data-lightbox="gallery"
+                            data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_1.webp" data-title="ビーチでハグ"
+                            data-desc="友達とビーチで ・ 📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_1.webp" alt="ミルナ - ビーチでハグ" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>ビーチでハグ</h3>
+                                    <p>📷 yoshiさん</p>
+                                </div>
+                                <div class="gallery-expand">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- イベント写真 (シイヴ撮影) -->
+                    <div class="gallery-item" data-category="event" data-aos="fade-up" data-aos-delay="150">
+                        <div class="gallery-card" data-lightbox="gallery"
+                            data-img="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_5.webp" data-title="ケモコンにて"
+                            data-desc="ケモノの文化祭 ・ 📷 シイヴさん">
+                            <img src="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_5.webp" alt="ミルナ - ケモコンにて" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>ケモコンにて</h3>
+                                    <p>📷 シイヴさん</p>
+                                </div>
+                                <div class="gallery-expand">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 日常写真 (よど撮影) -->
+                    <div class="gallery-item" data-category="daily" data-aos="fade-up" data-aos-delay="200">
+                        <div class="gallery-card" data-lightbox="gallery" data-img="img/よど/IMG_0219.webp"
+                            data-title="リラックス" data-desc="のんびりしたひととき ・ 📷 よどさん">
+                            <img src="img/よど/IMG_0219.webp" alt="ミルナ - リラックス" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>リラックス</h3>
+                                    <p>📷 よどさん</p>
+                                </div>
+                                <div class="gallery-expand">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 日常写真 (たちつてお撮影) -->
+                    <div class="gallery-item" data-category="daily" data-aos="fade-up" data-aos-delay="250">
+                        <div class="gallery-card" data-lightbox="gallery" data-img="img/たちつてお/73A00063_Original.webp"
+                            data-title="お友達と" data-desc="カフェでのおしゃべり ・ 📷 たちつておさん">
+                            <img src="img/たちつてお/73A00063_Original.webp" alt="ミルナ - お友達と" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>お友達と</h3>
+                                    <p>📷 たちつておさん</p>
+                                </div>
+                                <div class="gallery-expand">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- アウトドア写真 (yoshi撮影) -->
+                    <div class="gallery-item" data-category="outdoor" data-aos="fade-up" data-aos-delay="300">
+                        <div class="gallery-card" data-lightbox="gallery"
+                            data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_10.webp" data-title="ピンクのドア"
+                            data-desc="不思議な世界への入り口 ・ 📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_10.webp" alt="ミルナ - ピンクのドア" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>ピンクのドア</h3>
+                                    <p>📷 yoshiさん</p>
+                                </div>
+                                <div class="gallery-expand">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="outdoor" data-aos="fade-up" data-aos-delay="50">
+                        <div class="gallery-card" data-lightbox="gallery"
+                            data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_15.webp" data-title="ドライブ"
+                            data-desc="車の中からこんにちは ・ 📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_15.webp" alt="ミルナ - ドライブ" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>ドライブ</h3>
+                                    <p>📷 yoshiさん</p>
+                                </div>
+                                <div class="gallery-expand">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- イベント写真 (シイヴ撮影) -->
+                    <div class="gallery-item" data-category="event" data-aos="fade-up" data-aos-delay="100">
+                        <div class="gallery-card" data-lightbox="gallery"
+                            data-img="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_1.webp" data-title="時之栖"
+                            data-desc="ホテル時之栖の前で ・ 📷 シイヴさん">
+                            <img src="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_1.webp" alt="ミルナ - 時之栖" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>時之栖</h3>
+                                    <p>📷 シイヴさん</p>
+                                </div>
+                                <div class="gallery-expand">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="event" data-aos="fade-up" data-aos-delay="150">
+                        <div class="gallery-card" data-lightbox="gallery"
+                            data-img="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_12.webp" data-title="最高の笑顔"
+                            data-desc="イベントを満喫！ ・ 📷 シイヴさん">
+                            <img src="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_12.webp" alt="ミルナ - 最高の笑顔" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>最高の笑顔</h3>
+                                    <p>📷 シイヴさん</p>
+                                </div>
+                                <div class="gallery-expand">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 日常写真 (たちつてお撮影) -->
+                    <div class="gallery-item" data-category="daily" data-aos="fade-up" data-aos-delay="200">
+                        <div class="gallery-card" data-lightbox="gallery" data-img="img/たちつてお/73A00060_Original.webp"
+                            data-title="肉球タッチ" data-desc="ハイタッチ！ ・ 📷 たちつておさん">
+                            <img src="img/たちつてお/73A00060_Original.webp" alt="ミルナ - 肉球タッチ" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>肉球タッチ</h3>
+                                    <p>📷 たちつておさん</p>
+                                </div>
+                                <div class="gallery-expand">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="daily" data-aos="fade-up" data-aos-delay="250">
+                        <div class="gallery-card" data-lightbox="gallery" data-img="img/たちつてお/73A00032_Original.webp"
+                            data-title="ポールにつかまって" data-desc="カフェにて ・ 📷 たちつておさん">
+                            <img src="img/たちつてお/73A00032_Original.webp" alt="ミルナ - ポールにつかまって" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>ポールにつかまって</h3>
+                                    <p>📷 たちつておさん</p>
+                                </div>
+                                <div class="gallery-expand">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- イベント写真 (めるてぃん撮影) -->
+                    <div class="gallery-item" data-category="event" data-aos="fade-up" data-aos-delay="300">
+                        <div class="gallery-card" data-lightbox="gallery"
+                            data-img="img/めるてぃん/LINE_ALBUM_めるてぃん撮影_260221_1.webp" data-title="にくきゅうポーズ"
+                            data-desc="お友達とおそろい ・ 📷 めるてぃんさん">
+                            <img src="img/めるてぃん/LINE_ALBUM_めるてぃん撮影_260221_1.webp" alt="ミルナ - にくきゅうポーズ" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>にくきゅうポーズ</h3>
+                                    <p>📷 めるてぃんさん</p>
+                                </div>
+                                <div class="gallery-expand">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- イベント写真 (バイオ前線撮影) -->
+                    <div class="gallery-item" data-category="event" data-aos="fade-up" data-aos-delay="50">
+                        <div class="gallery-card" data-lightbox="gallery" data-img="img/バイオ前線/IMG_0239.webp"
+                            data-title="ケモノデイズ" data-desc="イベント会場にて ・ 📷 バイオ前線さん">
+                            <img src="img/バイオ前線/IMG_0239.webp" alt="ミルナ - ケモノデイズ" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>ケモノデイズ</h3>
+                                    <p>📷 バイオ前線さん</p>
+                                </div>
+                                <div class="gallery-expand">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- アウトドア写真 (yoshi撮影) -->
+                    <div class="gallery-item" data-category="outdoor" data-aos="fade-up" data-aos-delay="100">
+                        <div class="gallery-card" data-lightbox="gallery"
+                            data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_20.webp" data-title="仲良しトリオ"
+                            data-desc="海沿いの道で ・ 📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_20.webp" alt="ミルナ - 仲良しトリオ" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>仲良しトリオ</h3>
+                                    <p>📷 yoshiさん</p>
+                                </div>
+                                <div class="gallery-expand">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="outdoor" data-aos="fade-up" data-aos-delay="150">
+                        <div class="gallery-card" data-lightbox="gallery"
+                            data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_22.webp" data-title="夕暮れ時"
+                            data-desc="黄昏れるミルナ ・ 📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_22.webp" alt="ミルナ - 夕暮れ時" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>夕暮れ時</h3>
+                                    <p>📷 yoshiさん</p>
+                                </div>
+                                <div class="gallery-expand">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="about-text">
-                    <h3>ミルナについて</h3>
-                    <div class="profile-info">
-                        <div class="info-item">
-                            <i class="fas fa-signature"></i>
-                            <div>
-                                <strong>名前</strong>
-                                <p>ミルナ (Miluna)</p>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-venus-mars"></i>
-                            <div>
-                                <strong>性別</strong>
-                                <p>男の子</p>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-palette"></i>
-                            <div>
-                                <strong>種族</strong>
-                                <p>黒猫（ファーキャラクター）</p>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-book"></i>
-                            <div>
-                                <strong>名前の由来</strong>
-                                <p>ミルキーウェイ（銀河）+ ルナ（月）</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="features">
-                        <h4><i class="fas fa-sparkles"></i> 特徴</h4>
-                        <ul>
-                            <li>✨ 額に輝く紫色のストライプ</li>
-                            <li>🌙 大きな白と黒の耳</li>
-                            <li>💙 魅力的なブルーの瞳</li>
-                            <li>🌌 ダークグレーとブラックの毛並み</li>
-                            <li>🐾 思慮深く遊び心のある性格</li>
-                        </ul>
-                    </div>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ギャラリーセクション -->
-    <section class="gallery" id="gallery">
-        <div class="container">
-            <h2 class="section-title">
-                <i class="fas fa-images"></i> ギャラリー
-            </h2>
-            <div class="gallery-filters">
-                <button class="filter-btn active" data-filter="all">
-                    <i class="fas fa-th"></i> すべて
+        <!-- ライトボックスモーダル -->
+        <div class="lightbox" id="lightbox">
+            <div class="lightbox-content">
+                <button class="lightbox-close" id="lightboxClose" aria-label="閉じる">
+                    <i class="fas fa-times"></i>
                 </button>
-                <button class="filter-btn" data-filter="event">
-                    <i class="fas fa-star"></i> イベント
+                <button class="lightbox-prev" id="lightboxPrev" aria-label="前の画像">
+                    <i class="fas fa-chevron-left"></i>
                 </button>
-                <button class="filter-btn" data-filter="outdoor">
-                    <i class="fas fa-umbrella-beach"></i> アウトドア
+                <button class="lightbox-next" id="lightboxNext" aria-label="次の画像">
+                    <i class="fas fa-chevron-right"></i>
                 </button>
-                <button class="filter-btn" data-filter="daily">
-                    <i class="fas fa-couch"></i> 日常
-                </button>
-            </div>
-            <div class="gallery-grid gallery-masonry">
-                <!-- メインビジュアル -->
-                <div class="gallery-item" data-category="daily" data-aos="fade-up">
-                    <div class="gallery-card" data-lightbox="gallery" data-img="img/character.jpg" data-title="ミルナ"
-                        data-desc="メインビジュアル">
-                        <img src="img/character.jpg" alt="ミルナ - メインビジュアル" loading="lazy">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>ミルナ</h3>
-                                <p>メインビジュアル</p>
-                            </div>
-                            <div class="gallery-expand">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                    </div>
+                <div class="lightbox-image-container">
+                    <img id="lightboxImage" src="" alt="">
                 </div>
-
-                <!-- アウトドア写真 (yoshi撮影) -->
-                <div class="gallery-item" data-category="outdoor" data-aos="fade-up" data-aos-delay="50">
-                    <div class="gallery-card" data-lightbox="gallery"
-                        data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_8.webp" data-title="海辺で万歳"
-                        data-desc="砂浜で元気いっぱい ・ 📷 yoshiさん">
-                        <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_8.webp" alt="ミルナ - 海辺で万歳" loading="lazy">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>海辺で万歳</h3>
-                                <p>📷 yoshiさん</p>
-                            </div>
-                            <div class="gallery-expand">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="outdoor" data-aos="fade-up" data-aos-delay="100">
-                    <div class="gallery-card" data-lightbox="gallery"
-                        data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_11.webp" data-title="青空の下で"
-                        data-desc="澄み渡る空と一緒に ・ 📷 yoshiさん">
-                        <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_11.webp" alt="ミルナ - 青空の下で" loading="lazy">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>青空の下で</h3>
-                                <p>📷 yoshiさん</p>
-                            </div>
-                            <div class="gallery-expand">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="outdoor" data-aos="fade-up" data-aos-delay="150">
-                    <div class="gallery-card" data-lightbox="gallery" data-img="img/shota/DSC_5665.webp"
-                        data-title="イベントに参加" data-desc="ビーチで手を挙げて ・ 📷 shotaさん">
-                        <img src="img/shota/DSC_5665.webp" alt="ミルナ - イベントに参加" loading="lazy">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>イベントに参加</h3>
-                                <p>📷 shotaさん</p>
-                            </div>
-                            <div class="gallery-expand">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 日常写真 (じろー撮影) -->
-                <div class="gallery-item" data-category="daily" data-aos="fade-up" data-aos-delay="200">
-                    <div class="gallery-card" data-lightbox="gallery" data-img="img/じろー/2025-09-06_14-14-15_850.webp"
-                        data-title="お座りミルナ" data-desc="ちょこんとお座り ・ 📷 じろーさん">
-                        <img src="img/じろー/2025-09-06_14-14-15_850.webp" alt="ミルナ - お座りミルナ" loading="lazy">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>お座りミルナ</h3>
-                                <p>📷 じろーさん</p>
-                            </div>
-                            <div class="gallery-expand">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 日常写真 (たちつてお撮影) -->
-                <div class="gallery-item" data-category="daily" data-aos="fade-up" data-aos-delay="250">
-                    <div class="gallery-card" data-lightbox="gallery" data-img="img/たちつてお/73A00047_Original.webp"
-                        data-title="カフェタイム" data-desc="窓辺でくつろぎ ・ 📷 たちつておさん">
-                        <img src="img/たちつてお/73A00047_Original.webp" alt="ミルナ - カフェタイム" loading="lazy">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>カフェタイム</h3>
-                                <p>📷 たちつておさん</p>
-                            </div>
-                            <div class="gallery-expand">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- イベント写真 (かいさん撮影) -->
-                <div class="gallery-item" data-category="event" data-aos="fade-up" data-aos-delay="300">
-                    <div class="gallery-card" data-lightbox="gallery" data-img="img/かいさん/ITN_7250.webp"
-                        data-title="イベント会場" data-desc="華やかなステージの裏側で ・ 📷 かいさん">
-                        <img src="img/かいさん/ITN_7250.webp" alt="ミルナ - イベント会場" loading="lazy">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>イベント会場</h3>
-                                <p>📷 かいさん</p>
-                            </div>
-                            <div class="gallery-expand">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- アウトドア写真 (yoshi撮影) -->
-                <div class="gallery-item" data-category="outdoor" data-aos="fade-up" data-aos-delay="50">
-                    <div class="gallery-card" data-lightbox="gallery"
-                        data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_3.webp" data-title="海辺のお散歩"
-                        data-desc="波打ち際でのんびり ・ 📷 yoshiさん">
-                        <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_3.webp" alt="ミルナ - 海辺のお散歩" loading="lazy">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>海辺のお散歩</h3>
-                                <p>📷 yoshiさん</p>
-                            </div>
-                            <div class="gallery-expand">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="outdoor" data-aos="fade-up" data-aos-delay="100">
-                    <div class="gallery-card" data-lightbox="gallery"
-                        data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_1.webp" data-title="ビーチでハグ"
-                        data-desc="友達とビーチで ・ 📷 yoshiさん">
-                        <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_1.webp" alt="ミルナ - ビーチでハグ" loading="lazy">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>ビーチでハグ</h3>
-                                <p>📷 yoshiさん</p>
-                            </div>
-                            <div class="gallery-expand">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- イベント写真 (シイヴ撮影) -->
-                <div class="gallery-item" data-category="event" data-aos="fade-up" data-aos-delay="150">
-                    <div class="gallery-card" data-lightbox="gallery"
-                        data-img="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_5.webp" data-title="ケモコンにて"
-                        data-desc="ケモノの文化祭 ・ 📷 シイヴさん">
-                        <img src="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_5.webp" alt="ミルナ - ケモコンにて" loading="lazy">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>ケモコンにて</h3>
-                                <p>📷 シイヴさん</p>
-                            </div>
-                            <div class="gallery-expand">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 日常写真 (よど撮影) -->
-                <div class="gallery-item" data-category="daily" data-aos="fade-up" data-aos-delay="200">
-                    <div class="gallery-card" data-lightbox="gallery" data-img="img/よど/IMG_0219.webp" data-title="リラックス"
-                        data-desc="のんびりしたひととき ・ 📷 よどさん">
-                        <img src="img/よど/IMG_0219.webp" alt="ミルナ - リラックス" loading="lazy">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>リラックス</h3>
-                                <p>📷 よどさん</p>
-                            </div>
-                            <div class="gallery-expand">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 日常写真 (たちつてお撮影) -->
-                <div class="gallery-item" data-category="daily" data-aos="fade-up" data-aos-delay="250">
-                    <div class="gallery-card" data-lightbox="gallery" data-img="img/たちつてお/73A00063_Original.webp"
-                        data-title="お友達と" data-desc="カフェでのおしゃべり ・ 📷 たちつておさん">
-                        <img src="img/たちつてお/73A00063_Original.webp" alt="ミルナ - お友達と" loading="lazy">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>お友達と</h3>
-                                <p>📷 たちつておさん</p>
-                            </div>
-                            <div class="gallery-expand">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- アウトドア写真 (yoshi撮影) -->
-                <div class="gallery-item" data-category="outdoor" data-aos="fade-up" data-aos-delay="300">
-                    <div class="gallery-card" data-lightbox="gallery"
-                        data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_10.webp" data-title="ピンクのドア"
-                        data-desc="不思議な世界への入り口 ・ 📷 yoshiさん">
-                        <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_10.webp" alt="ミルナ - ピンクのドア" loading="lazy">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>ピンクのドア</h3>
-                                <p>📷 yoshiさん</p>
-                            </div>
-                            <div class="gallery-expand">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="outdoor" data-aos="fade-up" data-aos-delay="50">
-                    <div class="gallery-card" data-lightbox="gallery"
-                        data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_15.webp" data-title="ドライブ"
-                        data-desc="車の中からこんにちは ・ 📷 yoshiさん">
-                        <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_15.webp" alt="ミルナ - ドライブ" loading="lazy">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>ドライブ</h3>
-                                <p>📷 yoshiさん</p>
-                            </div>
-                            <div class="gallery-expand">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- イベント写真 (シイヴ撮影) -->
-                <div class="gallery-item" data-category="event" data-aos="fade-up" data-aos-delay="100">
-                    <div class="gallery-card" data-lightbox="gallery"
-                        data-img="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_1.webp" data-title="時之栖"
-                        data-desc="ホテル時之栖の前で ・ 📷 シイヴさん">
-                        <img src="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_1.webp" alt="ミルナ - 時之栖" loading="lazy">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>時之栖</h3>
-                                <p>📷 シイヴさん</p>
-                            </div>
-                            <div class="gallery-expand">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="event" data-aos="fade-up" data-aos-delay="150">
-                    <div class="gallery-card" data-lightbox="gallery"
-                        data-img="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_12.webp" data-title="最高の笑顔"
-                        data-desc="イベントを満喫！ ・ 📷 シイヴさん">
-                        <img src="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_12.webp" alt="ミルナ - 最高の笑顔" loading="lazy">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>最高の笑顔</h3>
-                                <p>📷 シイヴさん</p>
-                            </div>
-                            <div class="gallery-expand">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 日常写真 (たちつてお撮影) -->
-                <div class="gallery-item" data-category="daily" data-aos="fade-up" data-aos-delay="200">
-                    <div class="gallery-card" data-lightbox="gallery" data-img="img/たちつてお/73A00060_Original.webp"
-                        data-title="肉球タッチ" data-desc="ハイタッチ！ ・ 📷 たちつておさん">
-                        <img src="img/たちつてお/73A00060_Original.webp" alt="ミルナ - 肉球タッチ" loading="lazy">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>肉球タッチ</h3>
-                                <p>📷 たちつておさん</p>
-                            </div>
-                            <div class="gallery-expand">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="daily" data-aos="fade-up" data-aos-delay="250">
-                    <div class="gallery-card" data-lightbox="gallery" data-img="img/たちつてお/73A00032_Original.webp"
-                        data-title="ポールにつかまって" data-desc="カフェにて ・ 📷 たちつておさん">
-                        <img src="img/たちつてお/73A00032_Original.webp" alt="ミルナ - ポールにつかまって" loading="lazy">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>ポールにつかまって</h3>
-                                <p>📷 たちつておさん</p>
-                            </div>
-                            <div class="gallery-expand">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- イベント写真 (めるてぃん撮影) -->
-                <div class="gallery-item" data-category="event" data-aos="fade-up" data-aos-delay="300">
-                    <div class="gallery-card" data-lightbox="gallery"
-                        data-img="img/めるてぃん/LINE_ALBUM_めるてぃん撮影_260221_1.webp" data-title="にくきゅうポーズ"
-                        data-desc="お友達とおそろい ・ 📷 めるてぃんさん">
-                        <img src="img/めるてぃん/LINE_ALBUM_めるてぃん撮影_260221_1.webp" alt="ミルナ - にくきゅうポーズ" loading="lazy">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>にくきゅうポーズ</h3>
-                                <p>📷 めるてぃんさん</p>
-                            </div>
-                            <div class="gallery-expand">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- イベント写真 (バイオ前線撮影) -->
-                <div class="gallery-item" data-category="event" data-aos="fade-up" data-aos-delay="50">
-                    <div class="gallery-card" data-lightbox="gallery" data-img="img/バイオ前線/IMG_0239.webp"
-                        data-title="ケモノデイズ" data-desc="イベント会場にて ・ 📷 バイオ前線さん">
-                        <img src="img/バイオ前線/IMG_0239.webp" alt="ミルナ - ケモノデイズ" loading="lazy">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>ケモノデイズ</h3>
-                                <p>📷 バイオ前線さん</p>
-                            </div>
-                            <div class="gallery-expand">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- アウトドア写真 (yoshi撮影) -->
-                <div class="gallery-item" data-category="outdoor" data-aos="fade-up" data-aos-delay="100">
-                    <div class="gallery-card" data-lightbox="gallery"
-                        data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_20.webp" data-title="仲良しトリオ"
-                        data-desc="海沿いの道で ・ 📷 yoshiさん">
-                        <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_20.webp" alt="ミルナ - 仲良しトリオ" loading="lazy">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>仲良しトリオ</h3>
-                                <p>📷 yoshiさん</p>
-                            </div>
-                            <div class="gallery-expand">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="outdoor" data-aos="fade-up" data-aos-delay="150">
-                    <div class="gallery-card" data-lightbox="gallery"
-                        data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_22.webp" data-title="夕暮れ時"
-                        data-desc="黄昏れるミルナ ・ 📷 yoshiさん">
-                        <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_22.webp" alt="ミルナ - 夕暮れ時" loading="lazy">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h3>夕暮れ時</h3>
-                                <p>📷 yoshiさん</p>
-                            </div>
-                            <div class="gallery-expand">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                    </div>
+                <div class="lightbox-info">
+                    <h3 id="lightboxTitle"></h3>
+                    <p id="lightboxDesc"></p>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- ライトボックスモーダル -->
-    <div class="lightbox" id="lightbox">
-        <div class="lightbox-content">
-            <button class="lightbox-close" id="lightboxClose" aria-label="閉じる">
-                <i class="fas fa-times"></i>
-            </button>
-            <button class="lightbox-prev" id="lightboxPrev" aria-label="前の画像">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="lightbox-next" id="lightboxNext" aria-label="次の画像">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-            <div class="lightbox-image-container">
-                <img id="lightboxImage" src="" alt="">
+        <!-- ストーリーセクション -->
+        <section class="story" id="story">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-book-open"></i> ストーリー
+                </h2>
+                <div class="story-content">
+                    <div class="story-card">
+                        <div class="story-icon">
+                            <i class="fas fa-meteor"></i>
+                        </div>
+                        <h3>誕生</h3>
+                        <p>遥か彼方の銀河の彼方、星屑が舞う宇宙の果てで、ミルナは生まれました。ミルキーウェイの輝きとルナの優しさ、そして宇宙の音楽を受け継いだ、特別な黒猫の男の子です。</p>
+                    </div>
+                    <div class="story-card">
+                        <div class="story-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h3>音楽との出会い</h3>
+                        <p>星々の煌めきから生まれる音楽、それがミルナの一番の友達。彼の耳には宇宙のメロディが聞こえ、いつも心に歌を持っています。音楽があれば、どんな困難も乗り越えられる。</p>
+                    </div>
+                    <div class="story-card">
+                        <div class="story-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>出会い</h3>
+                        <p>地球にやってきたミルナは、たくさんの友達と出会いました。青い空の下で、彼の冒険は新しい章を迎えます。音楽と共に、あなたもミルナの友達になりませんか？</p>
+                    </div>
+                </div>
             </div>
-            <div class="lightbox-info">
-                <h3 id="lightboxTitle"></h3>
-                <p id="lightboxDesc"></p>
-            </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- ストーリーセクション -->
-    <section class="story" id="story">
-        <div class="container">
-            <h2 class="section-title">
-                <i class="fas fa-book-open"></i> ストーリー
-            </h2>
-            <div class="story-content">
-                <div class="story-card">
-                    <div class="story-icon">
-                        <i class="fas fa-meteor"></i>
+        <!-- 特徴セクション -->
+        <section class="features-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-magic"></i> ミルナの魔法
+                </h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-moon"></i>
+                        </div>
+                        <h3>月の力</h3>
+                        <p>ルナから受け継いだ優しさと神秘的な力</p>
                     </div>
-                    <h3>誕生</h3>
-                    <p>遥か彼方の銀河の彼方、星屑が舞う宇宙の果てで、ミルナは生まれました。ミルキーウェイの輝きとルナの優しさ、そして宇宙の音楽を受け継いだ、特別な黒猫の男の子です。</p>
-                </div>
-                <div class="story-card">
-                    <div class="story-icon">
-                        <i class="fas fa-music"></i>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-galaxy"></i>
+                        </div>
+                        <h3>銀河の輝き</h3>
+                        <p>ミルキーウェイの煌めきを纏う特別な存在</p>
                     </div>
-                    <h3>音楽との出会い</h3>
-                    <p>星々の煌めきから生まれる音楽、それがミルナの一番の友達。彼の耳には宇宙のメロディが聞こえ、いつも心に歌を持っています。音楽があれば、どんな困難も乗り越えられる。</p>
-                </div>
-                <div class="story-card">
-                    <div class="story-icon">
-                        <i class="fas fa-heart"></i>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <h3>音楽の才能</h3>
+                        <p>宇宙のメロディを奏でる音楽好きな黒猫</p>
                     </div>
-                    <h3>出会い</h3>
-                    <p>地球にやってきたミルナは、たくさんの友達と出会いました。青い空の下で、彼の冒険は新しい章を迎えます。音楽と共に、あなたもミルナの友達になりませんか？</p>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>思慮深さ</h3>
+                        <p>物事をじっくり考える賢い黒猫</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 特徴セクション -->
-    <section class="features-section">
-        <div class="container">
-            <h2 class="section-title">
-                <i class="fas fa-magic"></i> ミルナの魔法
-            </h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-moon"></i>
+        <!-- コンタクトセクション -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-envelope"></i> コンタクト
+                </h2>
+                <div class="contact-content">
+                    <p class="contact-description">ミルナについてもっと知りたい方、お友達になりたい方は<br>お気軽にメッセージをお送りください！</p>
+                    <div class="social-links">
+                        <a href="https://x.com/milna9625" class="social-link" target="_blank" rel="noopener noreferrer"
+                            title="X">
+                            <i class="fab fa-x"></i>
+                        </a>
+                        <a href="https://instagram.com/milna.9625" class="social-link" target="_blank"
+                            rel="noopener noreferrer" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://discord.com" class="social-link" target="_blank" rel="noopener noreferrer"
+                            title="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="mailto:9625@milna-world.com" class="social-link" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
                     </div>
-                    <h3>月の力</h3>
-                    <p>ルナから受け継いだ優しさと神秘的な力</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-galaxy"></i>
-                    </div>
-                    <h3>銀河の輝き</h3>
-                    <p>ミルキーウェイの煌めきを纏う特別な存在</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-headphones"></i>
-                    </div>
-                    <h3>音楽の才能</h3>
-                    <p>宇宙のメロディを奏でる音楽好きな黒猫</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>思慮深さ</h3>
-                    <p>物事をじっくり考える賢い黒猫</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- コンタクトセクション -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">
-                <i class="fas fa-envelope"></i> コンタクト
-            </h2>
-            <div class="contact-content">
-                <p class="contact-description">ミルナについてもっと知りたい方、お友達になりたい方は<br>お気軽にメッセージをお送りください！</p>
-                <div class="social-links">
-                    <a href="https://x.com/milna9625" class="social-link" target="_blank" rel="noopener noreferrer"
-                        title="X">
-                        <i class="fab fa-x"></i>
-                    </a>
-                    <a href="https://instagram.com/milna.9625" class="social-link" target="_blank"
-                        rel="noopener noreferrer" title="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://discord.com" class="social-link" target="_blank" rel="noopener noreferrer"
-                        title="Discord">
-                        <i class="fab fa-discord"></i>
-                    </a>
-                    <a href="mailto:9625@milna-world.com" class="social-link" title="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+    </main>
 
     <!-- フッター -->
     <footer class="footer">
@@ -714,7 +761,7 @@
         <i class="fas fa-question-circle"></i>
     </div>
 
-    <div class="help-modal" id="helpModal">
+    <div class="help-modal" id="helpModal" role="dialog" aria-modal="true" aria-label="遊び方ガイド">
         <div class="help-content">
             <div class="help-header">
                 <h3>🎮 遊び方ガイド</h3>

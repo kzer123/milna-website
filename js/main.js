@@ -748,8 +748,12 @@ function setupGalleryFilter() {
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             // アクティブボタン切り替え
-            filterBtns.forEach(b => b.classList.remove('active'));
+            filterBtns.forEach(b => {
+                b.classList.remove('active');
+                b.setAttribute('aria-pressed', 'false');
+            });
             btn.classList.add('active');
+            btn.setAttribute('aria-pressed', 'true');
 
             const filter = btn.dataset.filter;
 
