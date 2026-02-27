@@ -781,9 +781,66 @@ function setupGalleryFilter() {
                 // ライトボックスの画像リストを更新
                 const visibleCards = document.querySelectorAll('.gallery-item:not(.hidden) .gallery-card[data-lightbox]');
                 galleryImages = Array.from(visibleCards);
+
+                // フィルタリング時は折り畳みを解除
+                if (filter !== 'all') {
+                    const foldBtn = document.getElementById('galleryLoadMore');
+                    if (foldBtn) foldBtn.style.display = 'none';
+                    galleryItems.forEach(item => item.classList.remove('hidden-folded'));
+                } else {
+                    // 全て表示に戻した際も、一度ボタンを消して全表示にする（簡略化のため）
+                    const foldBtn = document.getElementById('galleryLoadMore');
+                    if (foldBtn) foldBtn.style.display = 'none';
+                    galleryItems.forEach(item => item.classList.remove('hidden-folded'));
+                }
             }, 300);
         });
     });
+}
+
+// ==========================================
+// ギャラリーの折り畳み機能
+// ==========================================
+function setupGalleryFolding() {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    const foldContainer = document.getElementById('galleryLoadMore');
+
+    // 初期表示枚数（モバイル・PC共通で適用）
+    const initialLimit = 6;
+
+    if (galleryItems.length <= initialLimit) {
+        if (foldContainer) foldContainer.style.display = 'none';
+        return;
+    }
+
+    // 制限以上のアイテムを隠す
+    galleryItems.forEach((item, index) => {
+        if (index >= initialLimit) {
+            item.classList.add('hidden-folded');
+        }
+    });
+
+    // もっと見るボタンのクリックイベント
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', () => {
+            galleryItems.forEach(item => {
+                item.classList.remove('hidden-folded');
+                // フェードイン効果
+                if (!item.classList.contains('hidden')) {
+                    item.classList.add('fade-in');
+                }
+            });
+
+            // ボタンを非表示に
+            if (foldContainer) {
+                foldContainer.style.opacity = '0';
+                setTimeout(() => {
+                    foldContainer.style.display = 'none';
+                }, 300);
+            }
+        });
+    }
 }
 
 // ==========================================
@@ -1033,6 +1090,7 @@ function init() {
     setupHelpModal();
     setupLightbox();
     setupGalleryFilter();
+    setupGalleryFolding();
 
     console.log('🌟 ミルナのWebサイトへようこそ！ 🌙');
     console.log('💡 ヒント: 「miluna」とタイプしてみてください！');

@@ -703,6 +703,36 @@ section {
 /* ==========================================
    ギャラリーセクション
    ========================================== */
+.gallery-section {
+    background: transparent;
+}
+
+.gallery-load-more {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--light-text);
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: white;
+    box-shadow: 0 0 20px rgba(155, 89, 182, 0.4);
+}
+
+.gallery-item.hidden-folded {
+    display: none !important;
+}
+
 /* ギャラリーフィルターボタン */
 .gallery-filters {
     display: flex;
@@ -1111,8 +1141,159 @@ section {
 }
 
 /* ==========================================
-   特徴セクション
+   ミルナの一日タイムラインセクション
    ========================================== */
+.daily-section {
+    background: rgba(15, 20, 45, 0.5);
+}
+
+.daily-intro {
+    text-align: center;
+    font-size: 1.15rem;
+    color: var(--gray-text);
+    margin-bottom: var(--spacing-lg);
+    margin-top: calc(-1 * var(--spacing-md));
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--spacing-md) 0;
+}
+
+/* 中央の縦ライン */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom,
+            #f39c12 0%,
+            #3498db 20%,
+            #e67e22 40%,
+            #27ae60 60%,
+            #9b59b6 80%,
+            #2c3e50 100%);
+    transform: translateX(-50%);
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(155, 89, 182, 0.3);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 0 var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.timeline-item.timeline-left {
+    left: 0;
+    padding-right: calc(var(--spacing-md) + 20px);
+    text-align: right;
+}
+
+.timeline-item.timeline-right {
+    left: 50%;
+    padding-left: calc(var(--spacing-md) + 20px);
+    text-align: left;
+}
+
+/* タイムラインのドット */
+.timeline-dot {
+    position: absolute;
+    top: 20px;
+    width: 16px;
+    height: 16px;
+    background: var(--dot-color, var(--primary-color));
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 0 12px var(--dot-color, var(--primary-color)),
+        0 0 24px rgba(155, 89, 182, 0.2);
+    animation: dotPulse 3s ease-in-out infinite;
+}
+
+.timeline-left .timeline-dot {
+    right: -8px;
+}
+
+.timeline-right .timeline-dot {
+    left: -8px;
+}
+
+@keyframes dotPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 8px var(--dot-color, var(--primary-color)),
+            0 0 16px rgba(155, 89, 182, 0.15);
+    }
+
+    50% {
+        box-shadow: 0 0 16px var(--dot-color, var(--primary-color)),
+            0 0 32px rgba(155, 89, 182, 0.3);
+    }
+}
+
+/* タイムラインカード */
+.timeline-card {
+    background: rgba(20, 25, 55, 0.8);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid rgba(155, 89, 182, 0.15);
+    border-left: 4px solid var(--card-accent, var(--primary-color));
+    transition: var(--transition-smooth);
+    backdrop-filter: blur(5px);
+}
+
+.timeline-left .timeline-card {
+    border-left: 1px solid rgba(155, 89, 182, 0.15);
+    border-right: 4px solid var(--card-accent, var(--primary-color));
+}
+
+.timeline-card:hover {
+    transform: translateY(-5px);
+    background: rgba(25, 30, 65, 0.9);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
+        0 0 15px rgba(155, 89, 182, 0.15);
+}
+
+.timeline-time {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+    margin-bottom: 0.5rem;
+    font-family: var(--font-primary);
+}
+
+.timeline-emoji {
+    font-size: 1.4rem;
+}
+
+.timeline-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--light-text), var(--gray-text));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.timeline-card p {
+    color: var(--gray-text);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* ==========================================
+   特徴セクション
+   ==========================================*/
+
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1431,9 +1612,50 @@ section {
         width: 100px;
         height: 100px;
     }
+
+    /* タイムラインレスポンシブ */
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 50px !important;
+        padding-right: var(--spacing-sm) !important;
+        margin-bottom: 2rem;
+        text-align: left !important;
+    }
+
+    .timeline-card {
+        padding: 1rem;
+    }
+
+    .timeline-item.timeline-left,
+    .timeline-item.timeline-right {
+        left: 0;
+    }
+
+    .timeline-dot {
+        left: 12px !important;
+        right: auto !important;
+    }
+
+    .timeline-left .timeline-card {
+        border-left: 4px solid var(--card-accent, var(--primary-color));
+        border-right: 1px solid rgba(155, 89, 182, 0.15);
+    }
 }
 
 @media (max-width: 768px) {
+    :root {
+        --spacing-lg: 1.5rem;
+        --spacing-xl: 2.5rem;
+    }
+
+    section {
+        padding: var(--spacing-xl) 0;
+    }
+
     .nav-menu {
         position: fixed;
         top: 70px;
