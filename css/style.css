@@ -1622,7 +1622,7 @@ section {
         width: 100%;
         padding-left: 50px !important;
         padding-right: var(--spacing-sm) !important;
-        margin-bottom: 2rem;
+        margin-bottom: 1.2rem;
         text-align: left !important;
     }
 
@@ -1752,11 +1752,12 @@ section {
 
 @media (max-width: 480px) {
     :root {
-        --spacing-lg: 2rem;
-        --spacing-xl: 3rem;
+        --spacing-lg: 1rem;
+        --spacing-xl: 1.5rem;
     }
 
     .hero {
+        min-height: 85vh;
         padding: var(--spacing-lg) var(--spacing-sm);
     }
 
@@ -1768,6 +1769,25 @@ section {
     .story-content,
     .features-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .story-card {
+        padding: 1.25rem;
+    }
+
+    .story-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .story-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 0.75rem;
+    }
+
+    .story-icon i {
+        font-size: 1.4rem;
     }
 
     .gallery-grid,
@@ -1805,5 +1825,187 @@ section {
 
     .help-icon {
         font-size: 2rem;
+    }
+}
+/* ==========================================
+   イベント参加記録セクション
+   ========================================== */
+.events-section {
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(155, 89, 182, 0.05) 50%, transparent 100%);
+}
+
+.events-description {
+    text-align: center;
+    color: var(--gray-text);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.05rem;
+}
+
+/* フィルターボタン */
+.events-filter {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-lg);
+}
+
+.event-filter-btn {
+    padding: 0.5rem 1.25rem;
+    border: 1px solid rgba(155, 89, 182, 0.4);
+    background: transparent;
+    color: var(--gray-text);
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: var(--font-japanese);
+    font-size: 0.9rem;
+    transition: var(--transition-fast);
+}
+
+.event-filter-btn:hover,
+.event-filter-btn.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+/* イベントグリッド */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.events-loading {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    color: var(--gray-text);
+    font-size: 1.1rem;
+}
+
+/* イベントカード */
+.event-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(155, 89, 182, 0.2);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: var(--transition-fast);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: eventCardIn 0.4s ease forwards;
+}
+
+.event-card:hover {
+    border-color: rgba(155, 89, 182, 0.6);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(155, 89, 182, 0.2);
+}
+
+@keyframes eventCardIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.event-card-photo {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.event-card-photo-placeholder {
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(135deg, rgba(155, 89, 182, 0.2), rgba(52, 152, 219, 0.2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+.event-card-body {
+    padding: 1.25rem;
+}
+
+.event-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.event-card-name {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--light-text);
+    line-height: 1.4;
+}
+
+.event-type-badge {
+    flex-shrink: 0;
+    font-size: 0.72rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.badge-fursuit { background: rgba(155, 89, 182, 0.3); color: #c39bd3; border: 1px solid rgba(155, 89, 182, 0.4); }
+.badge-online  { background: rgba(52, 152, 219, 0.3); color: #7fb3d3; border: 1px solid rgba(52, 152, 219, 0.4); }
+.badge-music   { background: rgba(231, 76,  60,  0.3); color: #e59b93; border: 1px solid rgba(231, 76, 60, 0.4); }
+.badge-other   { background: rgba(149, 165, 166, 0.3); color: #aab7b8; border: 1px solid rgba(149, 165, 166, 0.4); }
+
+.event-card-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 0.75rem;
+}
+
+.event-card-meta span {
+    font-size: 0.85rem;
+    color: var(--gray-text);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.event-card-meta i {
+    color: var(--primary-color);
+    width: 14px;
+}
+
+.event-card-comment {
+    font-size: 0.9rem;
+    color: var(--gray-text);
+    line-height: 1.6;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.events-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    color: var(--gray-text);
+}
+
+.events-empty i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .events-grid {
+        grid-template-columns: 1fr;
     }
 }

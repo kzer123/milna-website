@@ -1091,6 +1091,7 @@ function init() {
     setupLightbox();
     setupGalleryFilter();
     setupGalleryFolding();
+    setupEvents();
 
     console.log('🌟 ミルナのWebサイトへようこそ！ 🌙');
     console.log('💡 ヒント: 「miluna」とタイプしてみてください！');
@@ -1104,4 +1105,98 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
 } else {
     init();
+}
+// ==========================================
+// イベント参加記録
+// ==========================================
+const EVENT_TYPE_LABELS = {
+    fursuit: 'フルスーツ',
+    online:  'オンライン',
+    music:   '音楽',
+    other:   'その他'
+};
+
+function getBadgeClass(type) {
+    const map = { fursuit: 'badge-fursuit', online: 'badge-online', music: 'badge-music', other: 'badge-other' };
+    return map[type] || 'badge-other';
+}
+
+function formatDate(dateStr) {
+    if (!dateStr) return '';
+    const d = new Date(dateStr + 'T00:00:00');
+    return d.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+function renderEventCards(events) {
+    const grid = document.getElementById('eventsGrid');
+    if (!grid) return;
+
+    if (events.length === 0) {
+        grid.innerHTML = `
+            <div class="events-empty">
+                <i class="fas fa-calendar-times"></i>
+                <p>該当するイベントがありません</p>
+            </div>`;
+        return;
+    }
+
+    grid.innerHTML = events.map((ev, i) => {
+        const photoHtml = ev.photo
+            ? `<img class="event-card-photo" src="${ev.photo}" alt="${ev.name}" loading="lazy">`
+            : `<div class="event-card-photo-placeholder">🐱</div>`;
+
+        const badgeClass = getBadgeClass(ev.type);
+        const typeLabel = EVENT_TYPE_LABELS[ev.type] || ev.type;
+        const commentHtml = ev.comment ? `<p class="event-card-comment">💬 ${ev.comment}</p>` : '';
+
+        return `
+            <div class="event-card" style="animation-delay:${i * 0.07}s" data-type="${ev.type}">
+                ${photoHtml}
+                <div class="event-card-body">
+                    <div class="event-card-header">
+                        <span class="event-card-name">${ev.name}</span>
+                        <span class="event-type-badge ${badgeClass}">${typeLabel}</span>
+                    </div>
+                    <div class="event-card-meta">
+                        ${ev.date ? `<span><i class="fas fa-calendar"></i> ${formatDate(ev.date)}</span>` : ''}
+                        ${ev.location ? `<span><i class="fas fa-map-marker-alt"></i> ${ev.location}</span>` : ''}
+                    </div>
+                    ${commentHtml}
+                </div>
+            </div>`;
+    }).join('');
+}
+
+async function setupEvents() {
+    const grid = document.getElementById('eventsGrid');
+    if (!grid) return;
+
+    let allEvents = [];
+
+    try {
+        const res = await fetch('data/events.json');
+        if (!res.ok) throw new Error('fetch failed');
+        allEvents = await res.json();
+        // 日付の新しい順に並べる
+        allEvents.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+    } catch {
+        grid.innerHTML = '<div class="events-loading">データを読み込めませんでした</div>';
+        return;
+    }
+
+    renderEventCards(allEvents);
+
+    // フィルター設定
+    const filterBtns = document.querySelectorAll('.event-filter-btn');
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
+            btn.classList.add('active');
+            btn.setAttribute('aria-pressed', 'true');
+
+            const filter = btn.dataset.filter;
+            const filtered = filter === 'all' ? allEvents : allEvents.filter(ev => ev.type === filter);
+            renderEventCards(filtered);
+        });
+    });
 }

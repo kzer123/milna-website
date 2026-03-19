@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "ケモコン2025",
+    "date": "2025-11-23",
+    "location": "東京都内",
+    "type": "fursuit",
+    "comment": "たくさんのケモノ仲間と再会！ステージも最高でした🐾",
+    "photo": ""
+  },
+  {
+    "id": 2,
+    "name": "ケモノデイズ",
+    "date": "2025-09-14",
+    "location": "大阪",
+    "type": "fursuit",
+    "comment": "関西のケモ勢と初めて交流♪ 最高の一日でした！",
+    "photo": "img/バイオ前線/IMG_0239.webp"
+  },
+  {
+    "id": 3,
+    "name": "ホテル時之栖 イルミネーション",
+    "date": "2025-12-20",
+    "location": "静岡県・時之栖",
+    "type": "other",
+    "comment": "幻想的なイルミネーションの中で撮影！夜景が綺麗すぎた✨",
+    "photo": "img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_1.webp"
+  },
+  {
+    "id": 4,
+    "name": "オンライン交流会",
+    "date": "2025-08-10",
+    "location": "オンライン（Discord）",
+    "type": "online",
+    "comment": "全国のフレンドと音楽トーク！楽しすぎて時間を忘れた🎵",
+    "photo": ""
+  },
+  {
+    "id": 5,
+    "name": "海辺フォトウォーク",
+    "date": "2026-02-21",
+    "location": "湘南海岸",
+    "type": "other",
+    "comment": "青空と海をバックに思う存分撮影！yoshiさんありがとう☀️",
+    "photo": "img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_8.webp"
+  },
+  {
+    "id": 6,
+    "name": "カフェ撮影会",
+    "date": "2025-10-05",
+    "location": "東京・表参道",
+    "type": "other",
+    "comment": "おしゃれなカフェでリラックスショット。またやりたい！",
+    "photo": "img/たちつてお/73A00047_Original.webp"
+  }
+]
