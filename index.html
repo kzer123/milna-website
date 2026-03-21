@@ -98,6 +98,105 @@
 
         gtag('config', 'G-QJ0ERLF5ZD');
     </script>
+    <style>
+        /* ピックアップフォトセクション */
+        .pickup-photo-section {
+            padding: 80px 0;
+        }
+        .pickup-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            font-size: 1.05rem;
+        }
+        .pickup-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .pickup-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 4 / 3;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(30px) scale(0.95);
+            animation: pickupFadeIn 0.6s ease forwards;
+        }
+        .pickup-card:nth-child(1) { animation-delay: 0.1s; }
+        .pickup-card:nth-child(2) { animation-delay: 0.2s; }
+        .pickup-card:nth-child(3) { animation-delay: 0.3s; }
+        .pickup-card:nth-child(4) { animation-delay: 0.4s; }
+        .pickup-card:nth-child(5) { animation-delay: 0.5s; }
+        .pickup-card:nth-child(6) { animation-delay: 0.6s; }
+        @keyframes pickupFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        .pickup-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .pickup-card:hover img {
+            transform: scale(1.08);
+        }
+        .pickup-card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 16px 14px;
+            background: linear-gradient(transparent, rgba(10, 10, 26, 0.85));
+            transform: translateY(100%);
+            transition: transform 0.35s ease;
+        }
+        .pickup-card:hover .pickup-card-overlay {
+            transform: translateY(0);
+        }
+        .pickup-card-overlay h3 {
+            font-size: 0.95rem;
+            color: #fff;
+            margin: 0 0 2px;
+        }
+        .pickup-card-overlay p {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+        }
+        .pickup-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            pointer-events: none;
+            transition: border-color 0.3s ease;
+        }
+        .pickup-card:hover::after {
+            border-color: rgba(139, 92, 246, 0.5);
+        }
+        .pickup-more {
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .pickup-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+        }
+        @media (max-width: 480px) {
+            .pickup-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -238,6 +337,25 @@
                 </div>
             </div>
         </section>
+
+        <!-- ピックアップフォトセクション -->
+        <section class="pickup-photo-section" id="pickup">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-camera-retro"></i> ピックアップフォト
+                </h2>
+                <p class="pickup-subtitle">アクセスするたびに変わるミルナの写真 📸</p>
+                <div class="pickup-grid" id="pickupGrid">
+                    <!-- JSでランダムに挿入 -->
+                </div>
+                <div class="pickup-more">
+                    <a href="gallery.html" class="btn btn-outline">
+                        すべての写真を見る <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <!-- 特徴セクション -->
         <section class="features-section">
             <div class="container">
@@ -380,6 +498,56 @@
         </div>
     </div>
 
+    <script>
+        // ピックアップフォト: ランダムに6枚選んで表示
+        (function () {
+            const allPhotos = [
+                { src: 'img/character.jpg', title: 'ミルナ', desc: 'メインビジュアル' },
+                { src: 'img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_8.webp', title: '海辺で万歳', desc: '📷 yoshiさん' },
+                { src: 'img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_11.webp', title: '青空の下で', desc: '📷 yoshiさん' },
+                { src: 'img/shota/DSC_5665.webp', title: 'イベントに参加', desc: '📷 shotaさん' },
+                { src: 'img/じろー/2025-09-06_14-14-15_850.webp', title: 'お座りミルナ', desc: '📷 じろーさん' },
+                { src: 'img/たちつてお/73A00047_Original.webp', title: 'カフェタイム', desc: '📷 たちつておさん' },
+                { src: 'img/かいさん/ITN_7250.webp', title: 'イベント会場', desc: '📷 かいさん' },
+                { src: 'img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_3.webp', title: '海辺のお散歩', desc: '📷 yoshiさん' },
+                { src: 'img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_1.webp', title: 'ビーチでハグ', desc: '📷 yoshiさん' },
+                { src: 'img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_5.webp', title: 'ケモコンにて', desc: '📷 シイヴさん' },
+                { src: 'img/よど/IMG_0219.webp', title: 'リラックス', desc: '📷 よどさん' },
+                { src: 'img/たちつてお/73A00063_Original.webp', title: 'お友達と', desc: '📷 たちつておさん' },
+                { src: 'img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_10.webp', title: 'ピンクのドア', desc: '📷 yoshiさん' },
+                { src: 'img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_15.webp', title: 'ドライブ', desc: '📷 yoshiさん' },
+                { src: 'img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_1.webp', title: '時之栖', desc: '📷 シイヴさん' },
+                { src: 'img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_12.webp', title: '最高の笑顔', desc: '📷 シイヴさん' },
+                { src: 'img/たちつてお/73A00060_Original.webp', title: '肉球タッチ', desc: '📷 たちつておさん' },
+                { src: 'img/たちつてお/73A00032_Original.webp', title: 'ポールにつかまって', desc: '📷 たちつておさん' },
+                { src: 'img/めるてぃん/LINE_ALBUM_めるてぃん撮影_260221_1.webp', title: 'にくきゅうポーズ', desc: '📷 めるてぃんさん' },
+                { src: 'img/バイオ前線/IMG_0239.webp', title: 'ケモノデイズ', desc: '📷 バイオ前線さん' },
+                { src: 'img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_20.webp', title: '仲良しトリオ', desc: '📷 yoshiさん' },
+                { src: 'img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_22.webp', title: '夕暮れ時', desc: '📷 yoshiさん' }
+            ];
+
+            // Fisher-Yates シャッフルで6枚選出
+            const shuffled = [...allPhotos];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            const picked = shuffled.slice(0, 6);
+
+            const grid = document.getElementById('pickupGrid');
+            if (grid) {
+                grid.innerHTML = picked.map(photo => `
+                    <a href="gallery.html" class="pickup-card">
+                        <img src="${photo.src}" alt="${photo.title}" loading="lazy">
+                        <div class="pickup-card-overlay">
+                            <h3>${photo.title}</h3>
+                            <p>${photo.desc}</p>
+                        </div>
+                    </a>
+                `).join('');
+            }
+        })();
+    </script>
     <script src="js/main.js"></script>
 </body>
 
