@@ -3,7 +3,7 @@
     "id": 1,
     "name": "ケモコン2025",
     "date": "2025-11-23",
-    "location": "東京都内",
+    "location": "静岡県・時之栖",
     "type": "fursuit",
     "comment": "たくさんのケモノ仲間と再会！ステージも最高でした🐾",
     "photo": ""
@@ -25,15 +25,6 @@
     "type": "other",
     "comment": "幻想的なイルミネーションの中で撮影！夜景が綺麗すぎた✨",
     "photo": "img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_1.webp"
-  },
-  {
-    "id": 4,
-    "name": "オンライン交流会",
-    "date": "2025-08-10",
-    "location": "オンライン（Discord）",
-    "type": "online",
-    "comment": "全国のフレンドと音楽トーク！楽しすぎて時間を忘れた🎵",
-    "photo": ""
   },
   {
     "id": 5,
