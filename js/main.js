@@ -699,7 +699,9 @@ function setupLightbox() {
     // キーボード操作
     document.addEventListener('keydown', (e) => {
         if (lightbox && lightbox.classList.contains('active')) {
-            if (e.key === 'ArrowLeft') {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            } else if (e.key === 'ArrowLeft') {
                 showPrevImage();
             } else if (e.key === 'ArrowRight') {
                 showNextImage();
