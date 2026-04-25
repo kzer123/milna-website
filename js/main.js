@@ -664,11 +664,36 @@ function setupLightbox() {
     const galleryCards = document.querySelectorAll('.gallery-card[data-lightbox]');
     galleryImages = Array.from(galleryCards);
 
-    // 各ギャラリーカードにクリックイベント
+    // 各ギャラリーカードにクリック/タッチイベント
     galleryCards.forEach((card, index) => {
-        card.addEventListener('click', () => {
+        // デスクトップ用clickイベント
+        card.addEventListener('click', (e) => {
+            e.preventDefault();
             currentImageIndex = index;
             openLightbox(card);
+        });
+
+        // iOS Safari対応: touchendでもライトボックスを開く
+        let touchStartTime = 0;
+        let touchStartX = 0;
+        let touchStartY = 0;
+        card.addEventListener('touchstart', (e) => {
+            touchStartTime = Date.now();
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+
+        card.addEventListener('touchend', (e) => {
+            const elapsed = Date.now() - touchStartTime;
+            const touch = e.changedTouches[0];
+            const dx = Math.abs(touch.clientX - touchStartX);
+            const dy = Math.abs(touch.clientY - touchStartY);
+            // 短いタップ（300ms以内）かつ移動が少ない（10px以内）場合のみ
+            if (elapsed < 300 && dx < 10 && dy < 10) {
+                e.preventDefault();
+                currentImageIndex = index;
+                openLightbox(card);
+            }
         });
     });
 
@@ -720,12 +745,139 @@ function openLightbox(card) {
     lightboxDesc.textContent = desc;
 
     lightbox.classList.add('active');
+    // Safari対応: overflow + position fixedでスクロールを確実にブロック
     document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
+    document.body.dataset.scrollY = window.scrollY;
+    document.body.style.top = `-${window.scrollY}px`;
 }
 
 function closeLightbox() {
     lightbox.classList.remove('active');
+    // Safari対応: スクロール位置を復元
+    const scrollY = document.body.dataset.scrollY || 0;
     document.body.style.overflow = '';
+    document.body.style.position = '';
+    document.body.style.width = '';
+    document.body.style.top = '';
+    window.scrollTo(0, parseInt(scrollY));
+    // ズームをリセット
+    if (lightboxImage) {
+        lightboxImage.style.transform = 'scale(1)';
+        lightboxImage.style.transformOrigin = 'center center';
+    }
+}
+
+// ==========================================
+// ライトボックス ピンチズーム（モバイルSafari対応）
+// ==========================================
+function setupLightboxPinchZoom() {
+    const container = document.querySelector('.lightbox-image-container');
+    const img = document.getElementById('lightboxImage');
+    if (!container || !img) return;
+
+    let currentScale = 1;
+    let startDistance = 0;
+    let startScale = 1;
+    let lastTap = 0;
+    let panStartX = 0;
+    let panStartY = 0;
+    let currentTranslateX = 0;
+    let currentTranslateY = 0;
+    let startTranslateX = 0;
+    let startTranslateY = 0;
+
+    function getDistance(touches) {
+        const dx = touches[0].clientX - touches[1].clientX;
+        const dy = touches[0].clientY - touches[1].clientY;
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+
+    function resetZoom() {
+        currentScale = 1;
+        currentTranslateX = 0;
+        currentTranslateY = 0;
+        img.style.transform = 'scale(1) translate(0, 0)';
+        img.style.transformOrigin = 'center center';
+    }
+
+    // ピンチ開始
+    container.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 2) {
+            e.preventDefault();
+            startDistance = getDistance(e.touches);
+            startScale = currentScale;
+        } else if (e.touches.length === 1 && currentScale > 1) {
+            // パン開始（ズーム中のみ）
+            panStartX = e.touches[0].clientX;
+            panStartY = e.touches[0].clientY;
+            startTranslateX = currentTranslateX;
+            startTranslateY = currentTranslateY;
+        }
+
+        // ダブルタップ検出
+        if (e.touches.length === 1) {
+            const now = Date.now();
+            if (now - lastTap < 300) {
+                e.preventDefault();
+                if (currentScale > 1) {
+                    resetZoom();
+                } else {
+                    // ダブルタップでズームイン（タップ位置を中心に）
+                    const rect = img.getBoundingClientRect();
+                    const x = ((e.touches[0].clientX - rect.left) / rect.width) * 100;
+                    const y = ((e.touches[0].clientY - rect.top) / rect.height) * 100;
+                    currentScale = 2.5;
+                    img.style.transformOrigin = `${x}% ${y}%`;
+                    img.style.transform = `scale(${currentScale})`;
+                }
+            }
+            lastTap = now;
+        }
+    }, { passive: false });
+
+    // ピンチ中
+    container.addEventListener('touchmove', (e) => {
+        if (e.touches.length === 2) {
+            e.preventDefault();
+            const currentDistance = getDistance(e.touches);
+            const scale = (currentDistance / startDistance) * startScale;
+            currentScale = Math.min(Math.max(scale, 1), 5);
+            
+            // ピンチの中心点を基準に
+            const centerX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+            const centerY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+            const rect = img.getBoundingClientRect();
+            const x = ((centerX - rect.left) / rect.width) * 100;
+            const y = ((centerY - rect.top) / rect.height) * 100;
+            
+            img.style.transformOrigin = `${x}% ${y}%`;
+            img.style.transform = `scale(${currentScale}) translate(${currentTranslateX}px, ${currentTranslateY}px)`;
+        } else if (e.touches.length === 1 && currentScale > 1) {
+            // パン操作（ズーム中のみ）
+            e.preventDefault();
+            const dx = e.touches[0].clientX - panStartX;
+            const dy = e.touches[0].clientY - panStartY;
+            currentTranslateX = startTranslateX + dx / currentScale;
+            currentTranslateY = startTranslateY + dy / currentScale;
+            img.style.transform = `scale(${currentScale}) translate(${currentTranslateX}px, ${currentTranslateY}px)`;
+        }
+    }, { passive: false });
+
+    // ピンチ終了
+    container.addEventListener('touchend', (e) => {
+        if (currentScale <= 1) {
+            resetZoom();
+        }
+    });
+
+    // 画像切り替え時にズームリセット
+    const origOpen = openLightbox;
+    openLightbox = function(card) {
+        resetZoom();
+        origOpen(card);
+    };
 }
 
 function showPrevImage() {
@@ -1091,6 +1243,7 @@ function init() {
     setupImageErrorHandling();
     setupHelpModal();
     setupLightbox();
+    setupLightboxPinchZoom();
     setupGalleryFilter();
     setupGalleryFolding();
     setupEvents();
