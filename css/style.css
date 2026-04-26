@@ -1049,8 +1049,17 @@ section {
 }
 
 .lightbox-close {
-    top: 20px;
-    right: 20px;
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 10003;
+    width: 48px;
+    height: 48px;
+    font-size: 1.6rem;
+    background: rgba(155, 89, 182, 0.9);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
 .lightbox-prev {
@@ -1739,7 +1748,6 @@ section {
         transform: translateX(50%);
     }
 
-    .lightbox-close,
     .lightbox-prev,
     .lightbox-next {
         width: 40px;
@@ -1748,8 +1756,11 @@ section {
     }
 
     .lightbox-close {
-        top: 10px;
-        right: 10px;
+        width: 44px;
+        height: 44px;
+        top: 12px;
+        right: 12px;
+        font-size: 1.4rem;
     }
 
     .lightbox-prev {
