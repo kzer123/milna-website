@@ -579,7 +579,7 @@ function createRainbowEffect() {
 // 画像エラーハンドリング
 // ==========================================
 function setupImageErrorHandling() {
-    const images = document.querySelectorAll('img');
+    const images = document.querySelectorAll('img:not(#lightboxImage)');
 
     images.forEach(img => {
         img.addEventListener('error', function () {
