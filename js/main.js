@@ -122,7 +122,8 @@ function setupLightbox() {
     cards.forEach((card, index) => {
         card.addEventListener('click', (e) => {
             e.preventDefault();
-            currentImageIndex = index;
+            const visibleIndex = galleryImages.indexOf(card);
+            currentImageIndex = visibleIndex === -1 ? index : visibleIndex;
             openLightbox(card);
         });
     });
@@ -259,31 +260,62 @@ function setupLightboxPinchZoom() {
 }
 
 // ==========================================================================
-// Gallery filter (works across grid blocks and spread plates)
+// Gallery filter + paging (works across grid blocks and spread plates)
 // ==========================================================================
+
+const GAL_PAGE_SIZE = 24;
 
 function setupGalleryFilter() {
     const buttons = document.querySelectorAll('.gal-filter button');
-    if (!buttons.length) return;
-    const items = document.querySelectorAll('.gal-item[data-category], .gal-spread[data-category]');
+    const items = Array.from(document.querySelectorAll('.gal-item[data-category], .gal-spread[data-category]'));
+    if (!items.length) return;
+
+    const moreWrap = document.querySelector('.gal-more-wrap');
+    const moreBtn = document.getElementById('galMore');
+    const moreCount = moreBtn?.querySelector('.gal-more-count');
+    // narrow screens get the gallery in batches so the page stays scrollable
+    const compact = window.matchMedia('(max-width: 639px)');
+
+    let filter = 'all';
+    let shown = GAL_PAGE_SIZE;
+
+    function apply() {
+        const paged = compact.matches;
+        let matched = 0;
+
+        items.forEach(item => {
+            const match = filter === 'all' || item.dataset.category === filter;
+            if (match) matched++;
+            const show = match && (!paged || matched <= shown);
+            item.classList.toggle('is-hidden', !show);
+        });
+
+        const remaining = paged ? Math.max(0, matched - shown) : 0;
+        moreWrap?.classList.toggle('is-active', remaining > 0);
+        if (moreCount) moreCount.textContent = remaining > 0 ? `残り ${remaining}` : '';
+
+        galleryImages = Array.from(document.querySelectorAll(
+            '.gal-item:not(.is-hidden) [data-lightbox="gallery"], .gal-spread:not(.is-hidden) [data-lightbox="gallery"]'
+        ));
+    }
 
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
             buttons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            const filter = btn.dataset.filter;
-
-            items.forEach(item => {
-                const match = filter === 'all' || item.dataset.category === filter;
-                item.classList.toggle('is-hidden', !match);
-            });
-
-            const visibleCards = document.querySelectorAll(
-                '.gal-item:not(.is-hidden) [data-lightbox="gallery"], .gal-spread:not(.is-hidden) [data-lightbox="gallery"]'
-            );
-            galleryImages = Array.from(visibleCards);
+            filter = btn.dataset.filter;
+            shown = GAL_PAGE_SIZE;
+            apply();
         });
     });
+
+    moreBtn?.addEventListener('click', () => {
+        shown += GAL_PAGE_SIZE;
+        apply();
+    });
+
+    compact.addEventListener('change', apply);
+    apply();
 }
 
 // ==========================================================================
