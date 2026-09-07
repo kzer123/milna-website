@@ -5,33 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="ミルナ（Miluna）のギャラリー｜イベント・アウトドア・日常のさまざまな写真をお楽しみください。">
+        content="ミルナ（Miluna）のフォトダイアリー｜イベント・アウトドア・日常、さまざまな撮影者が記録したミルナの写真集。">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#0a0a1a">
-    <title>ギャラリー - ミルナ Miluna the Black Cat</title>
+    <meta name="theme-color" content="#0B0D10">
+    <title>PHOTO DIARY — ミルナ Miluna the Black Cat</title>
     <link rel="canonical" href="https://milna-world.com/gallery.html">
-    <!-- OGP -->
-    <meta property="og:title" content="ギャラリー - ミルナ Miluna the Black Cat">
-    <meta property="og:description" content="ミルナのギャラリー。イベント・アウトドア・日常のさまざまな写真をお楽しみください。">
+    <meta property="og:title" content="PHOTO DIARY — ミルナ Miluna the Black Cat">
+    <meta property="og:description" content="イベント・アウトドア・日常、さまざまな撮影者が記録したミルナの写真集。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://milna-world.com/gallery.html">
     <meta property="og:image" content="https://milna-world.com/img/character.jpg">
     <meta property="og:locale" content="ja_JP">
-    <meta property="og:site_name" content="ミルナ - Miluna the Black Cat">
-    <!-- Favicon -->
+    <meta property="og:site_name" content="MILUNA">
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐱</text></svg>"
         type="image/svg+xml">
-    <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ0ERLF5ZD"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -42,485 +36,756 @@
 </head>
 
 <body>
-    <!-- スキップリンク -->
     <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
 
-    <!-- 星空背景 -->
-    <div class="stars-background" id="starsBackground" aria-hidden="true"></div>
-
-    <!-- ナビゲーション -->
     <nav class="navbar" aria-label="メインナビゲーション">
         <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html" style="color:inherit;text-decoration:none;">
-                    <i class="fas fa-cat"></i>
-                    <span>ミルナ</span>
-                </a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html">ホーム</a></li>
-                <li><a href="index.html#about">プロフィール</a></li>
-                <li><a href="gallery.html" class="active">ギャラリー</a></li>
-                <li><a href="story.html">ストーリー</a></li>
-                <li><a href="events.html">イベント</a></li>
-                <li><a href="index.html#contact">コンタクト</a></li>
+            <div class="nav-logo"><a href="index.html">MILUNA</a></div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#about">ABOUT</a></li>
+                <li><a href="gallery.html" class="active">PHOTOS</a></li>
+                <li><a href="index.html#world">WORLD</a></li>
+                <li><a href="index.html#contact">CONTACT</a></li>
                 <li class="nav-social">
-                    <a href="https://x.com/milna9625" target="_blank" rel="noopener noreferrer" title="X">
-                        <i class="fab fa-x"></i>
-                    </a>
-                    <a href="https://instagram.com/milna.9625" target="_blank" rel="noopener noreferrer"
-                        title="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://discord.com" target="_blank" rel="noopener noreferrer" title="Discord">
-                        <i class="fab fa-discord"></i>
-                    </a>
-                    <a href="mailto:9625@milna-world.com" title="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
+                    <a href="https://x.com/milna9625" target="_blank" rel="noopener noreferrer">X</a>
+                    <a href="https://instagram.com/milna.9625" target="_blank" rel="noopener noreferrer">IG</a>
+                    <a href="https://discord.com" target="_blank" rel="noopener noreferrer">DISCORD</a>
                 </li>
             </ul>
             <div class="nav-toggle" id="navToggle" role="button" aria-label="メニューを開く" aria-expanded="false"
                 tabindex="0">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
         </div>
     </nav>
 
     <main id="main-content">
-        <!-- ギャラリーセクション -->
-        <section class="gallery" id="gallery" style="padding-top: 120px;">
-            <div class="container">
-                <h2 class="section-title">
-                    <i class="fas fa-images"></i> ギャラリー
-                </h2>
-                <div class="gallery-filters">
-                    <button class="filter-btn active" data-filter="all" aria-pressed="true">
-                        <i class="fas fa-th" aria-hidden="true"></i> すべて
-                    </button>
-                    <button class="filter-btn" data-filter="event" aria-pressed="false">
-                        <i class="fas fa-star" aria-hidden="true"></i> イベント
-                    </button>
-                    <button class="filter-btn" data-filter="outdoor" aria-pressed="false">
-                        <i class="fas fa-umbrella-beach" aria-hidden="true"></i> アウトドア
-                    </button>
-                    <button class="filter-btn" data-filter="daily" aria-pressed="false">
-                        <i class="fas fa-couch" aria-hidden="true"></i> 日常
-                    </button>
-                </div>
-                <div class="gallery-grid gallery-masonry">
-                    <!-- メインビジュアル -->
-                    <div class="gallery-item" data-category="daily" data-aos="fade-up">
-                        <div class="gallery-card" data-lightbox="gallery" data-img="img/character.jpg" data-title="ミルナ"
-                            data-desc="メインビジュアル">
-                            <img src="img/character.jpg" alt="ミルナ - メインビジュアル" loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-info">
-                                    <h3>ミルナ</h3>
-                                    <p>メインビジュアル</p>
-                                </div>
-                                <div class="gallery-expand">
-                                    <i class="fas fa-search-plus"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div class="page-head container">
+            <p class="eyebrow">PHOTO DIARY</p>
+            <h1>Scenes from<br>Miluna's World.</h1>
+            <p>イベント・アウトドア・日常。友人たちのカメラが記録した、75枚のミルナ。</p>
+        </div>
 
-                    <!-- アウトドア写真 (yoshi撮影) -->
-                    <div class="gallery-item" data-category="outdoor" data-aos="fade-up" data-aos-delay="50">
-                        <div class="gallery-card" data-lightbox="gallery"
-                            data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_8.webp" data-title="海辺で万歳"
-                            data-desc="砂浜で元気いっぱい ・ 📷 yoshiさん">
-                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_8.webp"
-                                alt="青空が広がる海岸の砂浜で、両手を挙げて元気いっぱいにポーズをとる黒猫のミルナ" loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-info">
-                                    <h3>海辺で万歳</h3>
-                                    <p>📷 yoshiさん</p>
-                                </div>
-                                <div class="gallery-expand" aria-label="画像を拡大表示">
-                                    <i class="fas fa-search-plus"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" data-category="outdoor" data-aos="fade-up" data-aos-delay="100">
-                        <div class="gallery-card" data-lightbox="gallery"
-                            data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_11.webp" data-title="青空の下で"
-                            data-desc="澄み渡る空と一緒に ・ 📷 yoshiさん">
-                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_11.webp"
-                                alt="抜けるような青空を背に、芝生の上で見つめるミルナのアップ写真" loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-info">
-                                    <h3>青空の下で</h3>
-                                    <p>📷 yoshiさん</p>
-                                </div>
-                                <div class="gallery-expand" aria-label="画像を拡大表示">
-                                    <i class="fas fa-search-plus"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" data-category="outdoor" data-aos="fade-up" data-aos-delay="150">
-                        <div class="gallery-card" data-lightbox="gallery" data-img="img/shota/DSC_5665.webp"
-                            data-title="イベントに参加" data-desc="ビーチで手を挙げて ・ 📷 shotaさん">
-                            <img src="img/shota/DSC_5665.webp" alt="イベント会場のビーチで、青いバンダナを巻いたミルナが片手を挙げて参加者に応えている様子"
-                                loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-info">
-                                    <h3>イベントに参加</h3>
-                                    <p>📷 shotaさん</p>
-                                </div>
-                                <div class="gallery-expand">
-                                    <i class="fas fa-search-plus"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 日常写真 (じろー撮影) -->
-                    <div class="gallery-item" data-category="daily" data-aos="fade-up" data-aos-delay="200">
-                        <div class="gallery-card" data-lightbox="gallery"
-                            data-img="img/じろー/2025-09-06_14-14-15_850.webp" data-title="お座りミルナ"
-                            data-desc="ちょこんとお座り ・ 📷 じろーさん">
-                            <img src="img/じろー/2025-09-06_14-14-15_850.webp" alt="柔らかな光が差し込む室内で、行儀よくお座りをしている黒猫のミルナ"
-                                loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-info">
-                                    <h3>お座りミルナ</h3>
-                                    <p>📷 じろーさん</p>
-                                </div>
-                                <div class="gallery-expand">
-                                    <i class="fas fa-search-plus"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 日常写真 (たちつてお撮影) -->
-                    <div class="gallery-item" data-category="daily" data-aos="fade-up" data-aos-delay="250">
-                        <div class="gallery-card" data-lightbox="gallery" data-img="img/たちつてお/73A00047_Original.webp"
-                            data-title="カフェタイム" data-desc="窓辺でくつろぎ ・ 📷 たちつておさん">
-                            <img src="img/たちつてお/73A00047_Original.webp" alt="カフェの窓際で、外の景色を眺めながらリラックスしているミルナの横顔"
-                                loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-info">
-                                    <h3>カフェタイム</h3>
-                                    <p>📷 たちつておさん</p>
-                                </div>
-                                <div class="gallery-expand">
-                                    <i class="fas fa-search-plus"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- イベント写真 (かいさん撮影) -->
-                    <div class="gallery-item" data-category="event" data-aos="fade-up" data-aos-delay="300">
-                        <div class="gallery-card" data-lightbox="gallery" data-img="img/かいさん/ITN_7250.webp"
-                            data-title="イベント会場" data-desc="華やかなステージの裏側で ・ 📷 かいさん">
-                            <img src="img/かいさん/ITN_7250.webp" alt="華やかな照明に照らされたイベント会場の一角で、ポーズを決めるミルナ" loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-info">
-                                    <h3>イベント会場</h3>
-                                    <p>📷 かいさん</p>
-                                </div>
-                                <div class="gallery-expand">
-                                    <i class="fas fa-search-plus"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- アウトドア写真 (yoshi撮影) -->
-                    <div class="gallery-item" data-category="outdoor" data-aos="fade-up" data-aos-delay="50">
-                        <div class="gallery-card" data-lightbox="gallery"
-                            data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_3.webp" data-title="海辺のお散歩"
-                            data-desc="波打ち際でのんびり ・ 📷 yoshiさん">
-                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_3.webp" alt="波打ち際が穏やかな海辺を、楽しそうに歩き回るミルナの後ろ姿"
-                                loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-info">
-                                    <h3>海辺のお散歩</h3>
-                                    <p>📷 yoshiさん</p>
-                                </div>
-                                <div class="gallery-expand">
-                                    <i class="fas fa-search-plus"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" data-category="outdoor" data-aos="fade-up" data-aos-delay="100">
-                        <div class="gallery-card" data-lightbox="gallery"
-                            data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_1.webp" data-title="ビーチでハグ"
-                            data-desc="友達とビーチで ・ 📷 yoshiさん">
-                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_1.webp"
-                                alt="澄み切った青空の広がるビーチで、お友達のキャラクターと仲良くハグをするミルナ" loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-info">
-                                    <h3>ビーチでハグ</h3>
-                                    <p>📷 yoshiさん</p>
-                                </div>
-                                <div class="gallery-expand">
-                                    <i class="fas fa-search-plus"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- イベント写真 (シイヴ撮影) -->
-                    <div class="gallery-item" data-category="event" data-aos="fade-up" data-aos-delay="150">
-                        <div class="gallery-card" data-lightbox="gallery"
-                            data-img="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_5.webp" data-title="ケモコンにて"
-                            data-desc="ケモノの文化祭 ・ 📷 シイヴさん">
-                            <img src="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_5.webp"
-                                alt="賑やかな『ケモコン』会場で、多くの仲間に囲まれて楽しんでいるミルナ" loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-info">
-                                    <h3>ケモコンにて</h3>
-                                    <p>📷 シイヴさん</p>
-                                </div>
-                                <div class="gallery-expand">
-                                    <i class="fas fa-search-plus"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 日常写真 (よど撮影) -->
-                    <div class="gallery-item" data-category="daily" data-aos="fade-up" data-aos-delay="200">
-                        <div class="gallery-card" data-lightbox="gallery" data-img="img/よど/IMG_0219.webp"
-                            data-title="リラックス" data-desc="のんびりしたひととき ・ 📷 よどさん">
-                            <img src="img/よど/IMG_0219.webp" alt="ミルナ - リラックス" loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-info">
-                                    <h3>リラックス</h3>
-                                    <p>📷 よどさん</p>
-                                </div>
-                                <div class="gallery-expand">
-                                    <i class="fas fa-search-plus"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 日常写真 (たちつてお撮影) -->
-                    <div class="gallery-item" data-category="daily" data-aos="fade-up" data-aos-delay="250">
-                        <div class="gallery-card" data-lightbox="gallery" data-img="img/たちつてお/73A00063_Original.webp"
-                            data-title="お友達と" data-desc="カフェでのおしゃべり ・ 📷 たちつておさん">
-                            <img src="img/たちつてお/73A00063_Original.webp" alt="ミルナ - お友達と" loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-info">
-                                    <h3>お友達と</h3>
-                                    <p>📷 たちつておさん</p>
-                                </div>
-                                <div class="gallery-expand">
-                                    <i class="fas fa-search-plus"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- アウトドア写真 (yoshi撮影) -->
-                    <div class="gallery-item" data-category="outdoor" data-aos="fade-up" data-aos-delay="300">
-                        <div class="gallery-card" data-lightbox="gallery"
-                            data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_10.webp" data-title="ピンクのドア"
-                            data-desc="不思議な世界への入り口 ・ 📷 yoshiさん">
-                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_10.webp" alt="ミルナ - ピンクのドア" loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-info">
-                                    <h3>ピンクのドア</h3>
-                                    <p>📷 yoshiさん</p>
-                                </div>
-                                <div class="gallery-expand">
-                                    <i class="fas fa-search-plus"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" data-category="outdoor" data-aos="fade-up" data-aos-delay="50">
-                        <div class="gallery-card" data-lightbox="gallery"
-                            data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_15.webp" data-title="ドライブ"
-                            data-desc="車の中からこんにちは ・ 📷 yoshiさん">
-                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_15.webp" alt="ミルナ - ドライブ" loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-info">
-                                    <h3>ドライブ</h3>
-                                    <p>📷 yoshiさん</p>
-                                </div>
-                                <div class="gallery-expand">
-                                    <i class="fas fa-search-plus"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- イベント写真 (シイヴ撮影) -->
-                    <div class="gallery-item" data-category="event" data-aos="fade-up" data-aos-delay="100">
-                        <div class="gallery-card" data-lightbox="gallery"
-                            data-img="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_1.webp" data-title="時之栖"
-                            data-desc="ホテル時之栖の前で ・ 📷 シイヴさん">
-                            <img src="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_1.webp" alt="ミルナ - 時之栖" loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-info">
-                                    <h3>時之栖</h3>
-                                    <p>📷 シイヴさん</p>
-                                </div>
-                                <div class="gallery-expand">
-                                    <i class="fas fa-search-plus"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" data-category="event" data-aos="fade-up" data-aos-delay="150">
-                        <div class="gallery-card" data-lightbox="gallery"
-                            data-img="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_12.webp" data-title="最高の笑顔"
-                            data-desc="イベントを満喫！ ・ 📷 シイヴさん">
-                            <img src="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_12.webp" alt="ミルナ - 最高の笑顔" loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-info">
-                                    <h3>最高の笑顔</h3>
-                                    <p>📷 シイヴさん</p>
-                                </div>
-                                <div class="gallery-expand">
-                                    <i class="fas fa-search-plus"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 日常写真 (たちつてお撮影) -->
-                    <div class="gallery-item" data-category="daily" data-aos="fade-up" data-aos-delay="200">
-                        <div class="gallery-card" data-lightbox="gallery" data-img="img/たちつてお/73A00060_Original.webp"
-                            data-title="肉球タッチ" data-desc="ハイタッチ！ ・ 📷 たちつておさん">
-                            <img src="img/たちつてお/73A00060_Original.webp" alt="ミルナ - 肉球タッチ" loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-info">
-                                    <h3>肉球タッチ</h3>
-                                    <p>📷 たちつておさん</p>
-                                </div>
-                                <div class="gallery-expand">
-                                    <i class="fas fa-search-plus"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" data-category="daily" data-aos="fade-up" data-aos-delay="250">
-                        <div class="gallery-card" data-lightbox="gallery" data-img="img/たちつてお/73A00032_Original.webp"
-                            data-title="ポールにつかまって" data-desc="カフェにて ・ 📷 たちつておさん">
-                            <img src="img/たちつてお/73A00032_Original.webp" alt="カフェのような店内で、ポールに優しく手を添えてこちらを見つめるミルナ"
-                                loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-info">
-                                    <h3>ポールにつかまって</h3>
-                                    <p>📷 たちつておさん</p>
-                                </div>
-                                <div class="gallery-expand" aria-label="画像を拡大表示">
-                                    <i class="fas fa-search-plus"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- イベント写真 (めるてぃん撮影) -->
-                    <div class="gallery-item" data-category="event" data-aos="fade-up" data-aos-delay="300">
-                        <div class="gallery-card" data-lightbox="gallery"
-                            data-img="img/めるてぃん/LINE_ALBUM_めるてぃん撮影_260221_1.webp" data-title="にくきゅうポーズ"
-                            data-desc="お友達とおそろい ・ 📷 めるてぃんさん">
-                            <img src="img/めるてぃん/LINE_ALBUM_めるてぃん撮影_260221_1.webp" alt="ミルナ - にくきゅうポーズ" loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-info">
-                                    <h3>にくきゅうポーズ</h3>
-                                    <p>📷 めるてぃんさん</p>
-                                </div>
-                                <div class="gallery-expand">
-                                    <i class="fas fa-search-plus"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- イベント写真 (バイオ前線撮影) -->
-                    <div class="gallery-item" data-category="event" data-aos="fade-up" data-aos-delay="50">
-                        <div class="gallery-card" data-lightbox="gallery" data-img="img/バイオ前線/IMG_0239.webp"
-                            data-title="ケモノデイズ" data-desc="イベント会場にて ・ 📷 バイオ前線さん">
-                            <img src="img/バイオ前線/IMG_0239.webp" alt="ミルナ - ケモノデイズ" loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-info">
-                                    <h3>ケモノデイズ</h3>
-                                    <p>📷 バイオ前線さん</p>
-                                </div>
-                                <div class="gallery-expand">
-                                    <i class="fas fa-search-plus"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- アウトドア写真 (yoshi撮影) -->
-                    <div class="gallery-item" data-category="outdoor" data-aos="fade-up" data-aos-delay="100">
-                        <div class="gallery-card" data-lightbox="gallery"
-                            data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_20.webp" data-title="仲良しトリオ"
-                            data-desc="海沿いの道で ・ 📷 yoshiさん">
-                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_20.webp" alt="ミルナ - 仲良しトリオ" loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-info">
-                                    <h3>仲良しトリオ</h3>
-                                    <p>📷 yoshiさん</p>
-                                </div>
-                                <div class="gallery-expand">
-                                    <i class="fas fa-search-plus"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" data-category="outdoor" data-aos="fade-up" data-aos-delay="150">
-                        <div class="gallery-card" data-lightbox="gallery"
-                            data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_22.webp" data-title="夕暮れ時"
-                            data-desc="黄昏れるミルナ ・ 📷 yoshiさん">
-                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_22.webp" alt="ミルナ - 夕暮れ時" loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-info">
-                                    <h3>夕暮れ時</h3>
-                                    <p>📷 yoshiさん</p>
-                                </div>
-                                <div class="gallery-expand">
-                                    <i class="fas fa-search-plus"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-load-more" id="galleryLoadMore">
-                    <button class="btn btn-outline" id="loadMoreBtn">
-                        もっと見る <i class="fas fa-chevron-down"></i>
-                    </button>
-                </div>
+        <div class="container">
+            <div class="gal-filter" role="group" aria-label="カテゴリで絞り込み">
+                <button class="active" data-filter="all">ALL</button>
+                <button data-filter="event">EVENT</button>
+                <button data-filter="outdoor">OUTDOOR</button>
+                <button data-filter="daily">DAILY</button>
             </div>
-        </section>
+        </div>
 
-        <!-- ライトボックスモーダル -->
+        <div class="container">
+            <figure class="gal-spread" data-category="daily">
+                <a class="gal-spread-link" href="img/character.jpg" data-lightbox="gallery" data-img="img/character.jpg" data-title="ミルナ" data-desc="メインビジュアル">
+                    <img src="img/character.jpg" alt="ミルナ - 銀河と月から名付けられた黒猫のファーキャラクター" loading="lazy" width="683" height="1024">
+                </a>
+                <figcaption>
+                    <span class="gal-spread-eyebrow">PLATE 000 / MAIN VISUAL</span>
+                    <span class="gal-spread-title">ミルナ</span>
+                    <span class="gal-spread-credit">メインビジュアル</span>
+                </figcaption>
+            </figure>
+        </div>
+
+        <div class="container gal-block">
+            <div class="gal-grid">
+                    <figure class="gal-item" data-category="outdoor">
+                        <a class="gal-card" href="img/loogaroo/IMG_0224.webp" data-lightbox="gallery" data-img="img/loogaroo/IMG_0224.webp" data-title="FRAME 001" data-desc="📷 loogarooさん">
+                            <img src="img/loogaroo/IMG_0224.webp" alt="ミルナ - loogarooさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 001</span>
+                                <span class="gal-cap-credit">📷 loogarooさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="outdoor">
+                        <a class="gal-card" href="img/shota/DSC_5665.webp" data-lightbox="gallery" data-img="img/shota/DSC_5665.webp" data-title="イベントに参加" data-desc="ビーチで手を挙げて ・ 📷 shotaさん">
+                            <img src="img/shota/DSC_5665.webp" alt="イベント会場のビーチで、青いバンダナを巻いたミルナが片手を挙げて参加者に応えている様子" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">イベントに参加</span>
+                                <span class="gal-cap-credit">📷 shotaさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="outdoor">
+                        <a class="gal-card" href="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_1.webp" data-lightbox="gallery" data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_1.webp" data-title="ビーチでハグ" data-desc="友達とビーチで ・ 📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_1.webp" alt="澄み切った青空の広がるビーチで、お友達のキャラクターと仲良くハグをするミルナ" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">ビーチでハグ</span>
+                                <span class="gal-cap-credit">📷 yoshiさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="event">
+                        <a class="gal-card" href="img/かいさん/ITN_7250.webp" data-lightbox="gallery" data-img="img/かいさん/ITN_7250.webp" data-title="イベント会場" data-desc="華やかなステージの裏側で ・ 📷 かいさんさん">
+                            <img src="img/かいさん/ITN_7250.webp" alt="華やかな照明に照らされたイベント会場の一角で、ポーズを決めるミルナ" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">イベント会場</span>
+                                <span class="gal-cap-credit">📷 かいさんさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="daily">
+                        <a class="gal-card" href="img/じろー/2025-09-06_14-14-15_850.webp" data-lightbox="gallery" data-img="img/じろー/2025-09-06_14-14-15_850.webp" data-title="お座りミルナ" data-desc="ちょこんとお座り ・ 📷 じろーさん">
+                            <img src="img/じろー/2025-09-06_14-14-15_850.webp" alt="柔らかな光が差し込む室内で、行儀よくお座りをしている黒猫のミルナ" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">お座りミルナ</span>
+                                <span class="gal-cap-credit">📷 じろーさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="daily">
+                        <a class="gal-card" href="img/たちつてお/73A00032_Original.webp" data-lightbox="gallery" data-img="img/たちつてお/73A00032_Original.webp" data-title="ポールにつかまって" data-desc="カフェにて ・ 📷 たちつておさん">
+                            <img src="img/たちつてお/73A00032_Original.webp" alt="カフェのような店内で、ポールに優しく手を添えてこちらを見つめるミルナ" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">ポールにつかまって</span>
+                                <span class="gal-cap-credit">📷 たちつておさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="event">
+                        <a class="gal-card" href="img/めるてぃん/LINE_ALBUM_めるてぃん撮影_260221_1.webp" data-lightbox="gallery" data-img="img/めるてぃん/LINE_ALBUM_めるてぃん撮影_260221_1.webp" data-title="にくきゅうポーズ" data-desc="お友達とおそろい ・ 📷 めるてぃんさん">
+                            <img src="img/めるてぃん/LINE_ALBUM_めるてぃん撮影_260221_1.webp" alt="ミルナ - にくきゅうポーズ" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">にくきゅうポーズ</span>
+                                <span class="gal-cap-credit">📷 めるてぃんさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="daily">
+                        <a class="gal-card" href="img/よど/IMG_0219.webp" data-lightbox="gallery" data-img="img/よど/IMG_0219.webp" data-title="リラックス" data-desc="のんびりしたひととき ・ 📷 よどさん">
+                            <img src="img/よど/IMG_0219.webp" alt="ミルナ - リラックス" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">リラックス</span>
+                                <span class="gal-cap-credit">📷 よどさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="event">
+                        <a class="gal-card" href="img/シイヴ/IMG_7118.webp" data-lightbox="gallery" data-img="img/シイヴ/IMG_7118.webp" data-title="FRAME 009" data-desc="📷 シイヴさん">
+                            <img src="img/シイヴ/IMG_7118.webp" alt="ミルナ - シイヴさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 009</span>
+                                <span class="gal-cap-credit">📷 シイヴさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="event">
+                        <a class="gal-card" href="img/バイオ前線/IMG_0239.webp" data-lightbox="gallery" data-img="img/バイオ前線/IMG_0239.webp" data-title="ケモノデイズ" data-desc="イベント会場にて ・ 📷 バイオ前線さん">
+                            <img src="img/バイオ前線/IMG_0239.webp" alt="ミルナ - ケモノデイズ" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">ケモノデイズ</span>
+                                <span class="gal-cap-credit">📷 バイオ前線さん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="outdoor">
+                        <a class="gal-card" href="img/loogaroo/IMG_0225.webp" data-lightbox="gallery" data-img="img/loogaroo/IMG_0225.webp" data-title="FRAME 011" data-desc="📷 loogarooさん">
+                            <img src="img/loogaroo/IMG_0225.webp" alt="ミルナ - loogarooさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 011</span>
+                                <span class="gal-cap-credit">📷 loogarooさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="outdoor">
+                        <a class="gal-card" href="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_10.webp" data-lightbox="gallery" data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_10.webp" data-title="ピンクのドア" data-desc="不思議な世界への入り口 ・ 📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_10.webp" alt="ミルナ - ピンクのドア" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">ピンクのドア</span>
+                                <span class="gal-cap-credit">📷 yoshiさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="event">
+                        <a class="gal-card" href="img/かいさん/ITN_7253.webp" data-lightbox="gallery" data-img="img/かいさん/ITN_7253.webp" data-title="FRAME 013" data-desc="📷 かいさんさん">
+                            <img src="img/かいさん/ITN_7253.webp" alt="ミルナ - かいさんさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 013</span>
+                                <span class="gal-cap-credit">📷 かいさんさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="daily">
+                        <a class="gal-card" href="img/じろー/2025-09-06_14-14-27_560.webp" data-lightbox="gallery" data-img="img/じろー/2025-09-06_14-14-27_560.webp" data-title="FRAME 014" data-desc="📷 じろーさん">
+                            <img src="img/じろー/2025-09-06_14-14-27_560.webp" alt="ミルナ - じろーさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 014</span>
+                                <span class="gal-cap-credit">📷 じろーさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="daily">
+                        <a class="gal-card" href="img/たちつてお/73A00034_Original.webp" data-lightbox="gallery" data-img="img/たちつてお/73A00034_Original.webp" data-title="FRAME 015" data-desc="📷 たちつておさん">
+                            <img src="img/たちつてお/73A00034_Original.webp" alt="ミルナ - たちつておさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 015</span>
+                                <span class="gal-cap-credit">📷 たちつておさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="event">
+                        <a class="gal-card" href="img/めるてぃん/LINE_ALBUM_めるてぃん撮影_260221_2.webp" data-lightbox="gallery" data-img="img/めるてぃん/LINE_ALBUM_めるてぃん撮影_260221_2.webp" data-title="FRAME 016" data-desc="📷 めるてぃんさん">
+                            <img src="img/めるてぃん/LINE_ALBUM_めるてぃん撮影_260221_2.webp" alt="ミルナ - めるてぃんさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 016</span>
+                                <span class="gal-cap-credit">📷 めるてぃんさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="daily">
+                        <a class="gal-card" href="img/よど/IMG_0220.webp" data-lightbox="gallery" data-img="img/よど/IMG_0220.webp" data-title="FRAME 017" data-desc="📷 よどさん">
+                            <img src="img/よど/IMG_0220.webp" alt="ミルナ - よどさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 017</span>
+                                <span class="gal-cap-credit">📷 よどさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="event">
+                        <a class="gal-card" href="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_1.webp" data-lightbox="gallery" data-img="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_1.webp" data-title="時之栖" data-desc="ホテル時之栖の前で ・ 📷 シイヴさん">
+                            <img src="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_1.webp" alt="ミルナ - 時之栖" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">時之栖</span>
+                                <span class="gal-cap-credit">📷 シイヴさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="event">
+                        <a class="gal-card" href="img/バイオ前線/IMG_0240.webp" data-lightbox="gallery" data-img="img/バイオ前線/IMG_0240.webp" data-title="FRAME 019" data-desc="📷 バイオ前線さん">
+                            <img src="img/バイオ前線/IMG_0240.webp" alt="ミルナ - バイオ前線さんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 019</span>
+                                <span class="gal-cap-credit">📷 バイオ前線さん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="outdoor">
+                        <a class="gal-card" href="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_11.webp" data-lightbox="gallery" data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_11.webp" data-title="青空の下で" data-desc="澄み渡る空と一緒に ・ 📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_11.webp" alt="抜けるような青空を背に、芝生の上で見つめるミルナのアップ写真" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">青空の下で</span>
+                                <span class="gal-cap-credit">📷 yoshiさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="event">
+                        <a class="gal-card" href="img/かいさん/ITN_7256.webp" data-lightbox="gallery" data-img="img/かいさん/ITN_7256.webp" data-title="FRAME 021" data-desc="📷 かいさんさん">
+                            <img src="img/かいさん/ITN_7256.webp" alt="ミルナ - かいさんさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 021</span>
+                                <span class="gal-cap-credit">📷 かいさんさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="daily">
+                        <a class="gal-card" href="img/じろー/2025-09-06_14-14-46_950.webp" data-lightbox="gallery" data-img="img/じろー/2025-09-06_14-14-46_950.webp" data-title="FRAME 022" data-desc="📷 じろーさん">
+                            <img src="img/じろー/2025-09-06_14-14-46_950.webp" alt="ミルナ - じろーさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 022</span>
+                                <span class="gal-cap-credit">📷 じろーさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="daily">
+                        <a class="gal-card" href="img/たちつてお/73A00035_Original.webp" data-lightbox="gallery" data-img="img/たちつてお/73A00035_Original.webp" data-title="FRAME 023" data-desc="📷 たちつておさん">
+                            <img src="img/たちつてお/73A00035_Original.webp" alt="ミルナ - たちつておさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 023</span>
+                                <span class="gal-cap-credit">📷 たちつておさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+            </div>
+        </div>
+
+        <div class="container">
+            <figure class="gal-spread" data-category="outdoor">
+                <a class="gal-spread-link" href="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_8.webp" data-lightbox="gallery" data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_8.webp" data-title="海辺で万歳" data-desc="砂浜で元気いっぱい ・ 📷 yoshiさん">
+                    <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_8.webp" alt="青空が広がる海岸の砂浜で、両手を挙げて元気いっぱいにポーズをとる黒猫のミルナ" loading="lazy" width="2048" height="1365">
+                </a>
+                <figcaption>
+                    <span class="gal-spread-eyebrow">PLATE 001</span>
+                    <span class="gal-spread-title">海辺で万歳</span>
+                    <span class="gal-spread-credit">📷 yoshiさん — 砂浜で元気いっぱい</span>
+                </figcaption>
+            </figure>
+        </div>
+
+        <div class="container gal-block">
+            <div class="gal-grid">
+                    <figure class="gal-item" data-category="daily">
+                        <a class="gal-card" href="img/よど/IMG_0221.webp" data-lightbox="gallery" data-img="img/よど/IMG_0221.webp" data-title="FRAME 024" data-desc="📷 よどさん">
+                            <img src="img/よど/IMG_0221.webp" alt="ミルナ - よどさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 024</span>
+                                <span class="gal-cap-credit">📷 よどさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="event">
+                        <a class="gal-card" href="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_10.webp" data-lightbox="gallery" data-img="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_10.webp" data-title="FRAME 025" data-desc="📷 シイヴさん">
+                            <img src="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_10.webp" alt="ミルナ - シイヴさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 025</span>
+                                <span class="gal-cap-credit">📷 シイヴさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="outdoor">
+                        <a class="gal-card" href="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_12.webp" data-lightbox="gallery" data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_12.webp" data-title="FRAME 026" data-desc="📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_12.webp" alt="ミルナ - yoshiさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 026</span>
+                                <span class="gal-cap-credit">📷 yoshiさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="event">
+                        <a class="gal-card" href="img/かいさん/ITN_7257.webp" data-lightbox="gallery" data-img="img/かいさん/ITN_7257.webp" data-title="FRAME 027" data-desc="📷 かいさんさん">
+                            <img src="img/かいさん/ITN_7257.webp" alt="ミルナ - かいさんさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 027</span>
+                                <span class="gal-cap-credit">📷 かいさんさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="daily">
+                        <a class="gal-card" href="img/じろー/2025-09-06_14-15-53_540.webp" data-lightbox="gallery" data-img="img/じろー/2025-09-06_14-15-53_540.webp" data-title="FRAME 028" data-desc="📷 じろーさん">
+                            <img src="img/じろー/2025-09-06_14-15-53_540.webp" alt="ミルナ - じろーさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 028</span>
+                                <span class="gal-cap-credit">📷 じろーさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="daily">
+                        <a class="gal-card" href="img/たちつてお/73A00038_Original.webp" data-lightbox="gallery" data-img="img/たちつてお/73A00038_Original.webp" data-title="FRAME 029" data-desc="📷 たちつておさん">
+                            <img src="img/たちつてお/73A00038_Original.webp" alt="ミルナ - たちつておさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 029</span>
+                                <span class="gal-cap-credit">📷 たちつておさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="event">
+                        <a class="gal-card" href="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_11.webp" data-lightbox="gallery" data-img="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_11.webp" data-title="FRAME 030" data-desc="📷 シイヴさん">
+                            <img src="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_11.webp" alt="ミルナ - シイヴさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 030</span>
+                                <span class="gal-cap-credit">📷 シイヴさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="outdoor">
+                        <a class="gal-card" href="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_13.webp" data-lightbox="gallery" data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_13.webp" data-title="FRAME 031" data-desc="📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_13.webp" alt="ミルナ - yoshiさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 031</span>
+                                <span class="gal-cap-credit">📷 yoshiさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="daily">
+                        <a class="gal-card" href="img/じろー/2025-09-06_14-17-07_780.webp" data-lightbox="gallery" data-img="img/じろー/2025-09-06_14-17-07_780.webp" data-title="FRAME 032" data-desc="📷 じろーさん">
+                            <img src="img/じろー/2025-09-06_14-17-07_780.webp" alt="ミルナ - じろーさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 032</span>
+                                <span class="gal-cap-credit">📷 じろーさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="daily">
+                        <a class="gal-card" href="img/たちつてお/73A00041_Original.webp" data-lightbox="gallery" data-img="img/たちつてお/73A00041_Original.webp" data-title="FRAME 033" data-desc="📷 たちつておさん">
+                            <img src="img/たちつてお/73A00041_Original.webp" alt="ミルナ - たちつておさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 033</span>
+                                <span class="gal-cap-credit">📷 たちつておさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="event">
+                        <a class="gal-card" href="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_12.webp" data-lightbox="gallery" data-img="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_12.webp" data-title="最高の笑顔" data-desc="イベントを満喫 ・ 📷 シイヴさん">
+                            <img src="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_12.webp" alt="ミルナ - 最高の笑顔" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">最高の笑顔</span>
+                                <span class="gal-cap-credit">📷 シイヴさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="outdoor">
+                        <a class="gal-card" href="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_14.webp" data-lightbox="gallery" data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_14.webp" data-title="FRAME 035" data-desc="📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_14.webp" alt="ミルナ - yoshiさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 035</span>
+                                <span class="gal-cap-credit">📷 yoshiさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="daily">
+                        <a class="gal-card" href="img/じろー/2025-09-06_14-18-15_770.webp" data-lightbox="gallery" data-img="img/じろー/2025-09-06_14-18-15_770.webp" data-title="FRAME 036" data-desc="📷 じろーさん">
+                            <img src="img/じろー/2025-09-06_14-18-15_770.webp" alt="ミルナ - じろーさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 036</span>
+                                <span class="gal-cap-credit">📷 じろーさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="daily">
+                        <a class="gal-card" href="img/たちつてお/73A00047_Original.webp" data-lightbox="gallery" data-img="img/たちつてお/73A00047_Original.webp" data-title="カフェタイム" data-desc="窓辺でくつろぎ ・ 📷 たちつておさん">
+                            <img src="img/たちつてお/73A00047_Original.webp" alt="カフェの窓際で、外の景色を眺めながらリラックスしているミルナの横顔" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">カフェタイム</span>
+                                <span class="gal-cap-credit">📷 たちつておさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="event">
+                        <a class="gal-card" href="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_13.webp" data-lightbox="gallery" data-img="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_13.webp" data-title="FRAME 038" data-desc="📷 シイヴさん">
+                            <img src="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_13.webp" alt="ミルナ - シイヴさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 038</span>
+                                <span class="gal-cap-credit">📷 シイヴさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="outdoor">
+                        <a class="gal-card" href="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_15.webp" data-lightbox="gallery" data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_15.webp" data-title="ドライブ" data-desc="車の中からこんにちは ・ 📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_15.webp" alt="ミルナ - ドライブ" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">ドライブ</span>
+                                <span class="gal-cap-credit">📷 yoshiさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="daily">
+                        <a class="gal-card" href="img/じろー/2025-09-06_14-18-43_170.webp" data-lightbox="gallery" data-img="img/じろー/2025-09-06_14-18-43_170.webp" data-title="FRAME 040" data-desc="📷 じろーさん">
+                            <img src="img/じろー/2025-09-06_14-18-43_170.webp" alt="ミルナ - じろーさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 040</span>
+                                <span class="gal-cap-credit">📷 じろーさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="daily">
+                        <a class="gal-card" href="img/たちつてお/73A00060_Original.webp" data-lightbox="gallery" data-img="img/たちつてお/73A00060_Original.webp" data-title="肉球タッチ" data-desc="ハイタッチ ・ 📷 たちつておさん">
+                            <img src="img/たちつてお/73A00060_Original.webp" alt="ミルナ - 肉球タッチ" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">肉球タッチ</span>
+                                <span class="gal-cap-credit">📷 たちつておさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="event">
+                        <a class="gal-card" href="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_14.webp" data-lightbox="gallery" data-img="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_14.webp" data-title="FRAME 042" data-desc="📷 シイヴさん">
+                            <img src="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_14.webp" alt="ミルナ - シイヴさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 042</span>
+                                <span class="gal-cap-credit">📷 シイヴさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="outdoor">
+                        <a class="gal-card" href="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_16.webp" data-lightbox="gallery" data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_16.webp" data-title="FRAME 043" data-desc="📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_16.webp" alt="ミルナ - yoshiさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 043</span>
+                                <span class="gal-cap-credit">📷 yoshiさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="daily">
+                        <a class="gal-card" href="img/じろー/2025-09-06_14-26-53_190.webp" data-lightbox="gallery" data-img="img/じろー/2025-09-06_14-26-53_190.webp" data-title="FRAME 044" data-desc="📷 じろーさん">
+                            <img src="img/じろー/2025-09-06_14-26-53_190.webp" alt="ミルナ - じろーさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 044</span>
+                                <span class="gal-cap-credit">📷 じろーさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="daily">
+                        <a class="gal-card" href="img/たちつてお/73A00062_Original.webp" data-lightbox="gallery" data-img="img/たちつてお/73A00062_Original.webp" data-title="FRAME 045" data-desc="📷 たちつておさん">
+                            <img src="img/たちつてお/73A00062_Original.webp" alt="ミルナ - たちつておさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 045</span>
+                                <span class="gal-cap-credit">📷 たちつておさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="event">
+                        <a class="gal-card" href="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_2.webp" data-lightbox="gallery" data-img="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_2.webp" data-title="FRAME 046" data-desc="📷 シイヴさん">
+                            <img src="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_2.webp" alt="ミルナ - シイヴさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 046</span>
+                                <span class="gal-cap-credit">📷 シイヴさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="outdoor">
+                        <a class="gal-card" href="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_17.webp" data-lightbox="gallery" data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_17.webp" data-title="FRAME 047" data-desc="📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_17.webp" alt="ミルナ - yoshiさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 047</span>
+                                <span class="gal-cap-credit">📷 yoshiさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+            </div>
+        </div>
+
+        <div class="container">
+            <figure class="gal-spread" data-category="event">
+                <a class="gal-spread-link" href="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_5.webp" data-lightbox="gallery" data-img="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_5.webp" data-title="ケモコンにて" data-desc="ケモノの文化祭 ・ 📷 シイヴさん">
+                    <img src="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_5.webp" alt="賑やかな『ケモコン』会場で、多くの仲間に囲まれて楽しんでいるミルナ" loading="lazy" width="1536" height="2048">
+                </a>
+                <figcaption>
+                    <span class="gal-spread-eyebrow">PLATE 002</span>
+                    <span class="gal-spread-title">ケモコンにて</span>
+                    <span class="gal-spread-credit">📷 シイヴさん — ケモノの文化祭</span>
+                </figcaption>
+            </figure>
+        </div>
+
+        <div class="container gal-block">
+            <div class="gal-grid">
+                    <figure class="gal-item" data-category="daily">
+                        <a class="gal-card" href="img/じろー/2025-09-06_14-53-21_840.webp" data-lightbox="gallery" data-img="img/じろー/2025-09-06_14-53-21_840.webp" data-title="FRAME 048" data-desc="📷 じろーさん">
+                            <img src="img/じろー/2025-09-06_14-53-21_840.webp" alt="ミルナ - じろーさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 048</span>
+                                <span class="gal-cap-credit">📷 じろーさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="daily">
+                        <a class="gal-card" href="img/たちつてお/73A00063_Original.webp" data-lightbox="gallery" data-img="img/たちつてお/73A00063_Original.webp" data-title="お友達と" data-desc="カフェでのおしゃべり ・ 📷 たちつておさん">
+                            <img src="img/たちつてお/73A00063_Original.webp" alt="ミルナ - お友達と" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">お友達と</span>
+                                <span class="gal-cap-credit">📷 たちつておさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="event">
+                        <a class="gal-card" href="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_3.webp" data-lightbox="gallery" data-img="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_3.webp" data-title="FRAME 050" data-desc="📷 シイヴさん">
+                            <img src="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_3.webp" alt="ミルナ - シイヴさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 050</span>
+                                <span class="gal-cap-credit">📷 シイヴさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="outdoor">
+                        <a class="gal-card" href="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_18.webp" data-lightbox="gallery" data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_18.webp" data-title="FRAME 051" data-desc="📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_18.webp" alt="ミルナ - yoshiさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 051</span>
+                                <span class="gal-cap-credit">📷 yoshiさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="daily">
+                        <a class="gal-card" href="img/じろー/2025-09-06_14-53-33_630.webp" data-lightbox="gallery" data-img="img/じろー/2025-09-06_14-53-33_630.webp" data-title="FRAME 052" data-desc="📷 じろーさん">
+                            <img src="img/じろー/2025-09-06_14-53-33_630.webp" alt="ミルナ - じろーさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 052</span>
+                                <span class="gal-cap-credit">📷 じろーさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="daily">
+                        <a class="gal-card" href="img/たちつてお/73A00064_Original.webp" data-lightbox="gallery" data-img="img/たちつてお/73A00064_Original.webp" data-title="FRAME 053" data-desc="📷 たちつておさん">
+                            <img src="img/たちつてお/73A00064_Original.webp" alt="ミルナ - たちつておさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 053</span>
+                                <span class="gal-cap-credit">📷 たちつておさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="event">
+                        <a class="gal-card" href="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_4.webp" data-lightbox="gallery" data-img="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_4.webp" data-title="FRAME 054" data-desc="📷 シイヴさん">
+                            <img src="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_4.webp" alt="ミルナ - シイヴさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 054</span>
+                                <span class="gal-cap-credit">📷 シイヴさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="outdoor">
+                        <a class="gal-card" href="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_19.webp" data-lightbox="gallery" data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_19.webp" data-title="FRAME 055" data-desc="📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_19.webp" alt="ミルナ - yoshiさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 055</span>
+                                <span class="gal-cap-credit">📷 yoshiさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="daily">
+                        <a class="gal-card" href="img/たちつてお/73A00067_Original.webp" data-lightbox="gallery" data-img="img/たちつてお/73A00067_Original.webp" data-title="FRAME 056" data-desc="📷 たちつておさん">
+                            <img src="img/たちつてお/73A00067_Original.webp" alt="ミルナ - たちつておさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 056</span>
+                                <span class="gal-cap-credit">📷 たちつておさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="outdoor">
+                        <a class="gal-card" href="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_2.webp" data-lightbox="gallery" data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_2.webp" data-title="FRAME 057" data-desc="📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_2.webp" alt="ミルナ - yoshiさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 057</span>
+                                <span class="gal-cap-credit">📷 yoshiさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="daily">
+                        <a class="gal-card" href="img/たちつてお/73A00082_Original.webp" data-lightbox="gallery" data-img="img/たちつてお/73A00082_Original.webp" data-title="FRAME 058" data-desc="📷 たちつておさん">
+                            <img src="img/たちつてお/73A00082_Original.webp" alt="ミルナ - たちつておさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 058</span>
+                                <span class="gal-cap-credit">📷 たちつておさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="event">
+                        <a class="gal-card" href="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_6.webp" data-lightbox="gallery" data-img="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_6.webp" data-title="FRAME 059" data-desc="📷 シイヴさん">
+                            <img src="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_6.webp" alt="ミルナ - シイヴさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 059</span>
+                                <span class="gal-cap-credit">📷 シイヴさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="event">
+                        <a class="gal-card" href="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_7.webp" data-lightbox="gallery" data-img="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_7.webp" data-title="FRAME 060" data-desc="📷 シイヴさん">
+                            <img src="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_7.webp" alt="ミルナ - シイヴさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 060</span>
+                                <span class="gal-cap-credit">📷 シイヴさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="outdoor">
+                        <a class="gal-card" href="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_21.webp" data-lightbox="gallery" data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_21.webp" data-title="FRAME 061" data-desc="📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_21.webp" alt="ミルナ - yoshiさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 061</span>
+                                <span class="gal-cap-credit">📷 yoshiさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="event">
+                        <a class="gal-card" href="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_8.webp" data-lightbox="gallery" data-img="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_8.webp" data-title="FRAME 062" data-desc="📷 シイヴさん">
+                            <img src="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_8.webp" alt="ミルナ - シイヴさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 062</span>
+                                <span class="gal-cap-credit">📷 シイヴさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="outdoor">
+                        <a class="gal-card" href="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_22.webp" data-lightbox="gallery" data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_22.webp" data-title="夕暮れ時" data-desc="黄昏れるミルナ ・ 📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_22.webp" alt="ミルナ - 夕暮れ時" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">夕暮れ時</span>
+                                <span class="gal-cap-credit">📷 yoshiさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="event">
+                        <a class="gal-card" href="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_9.webp" data-lightbox="gallery" data-img="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_9.webp" data-title="FRAME 064" data-desc="📷 シイヴさん">
+                            <img src="img/シイヴ/LINE_ALBUM_ミルちゃんphotos_260221_9.webp" alt="ミルナ - シイヴさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 064</span>
+                                <span class="gal-cap-credit">📷 シイヴさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="outdoor">
+                        <a class="gal-card" href="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_23.webp" data-lightbox="gallery" data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_23.webp" data-title="FRAME 065" data-desc="📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_23.webp" alt="ミルナ - yoshiさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 065</span>
+                                <span class="gal-cap-credit">📷 yoshiさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="outdoor">
+                        <a class="gal-card" href="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_3.webp" data-lightbox="gallery" data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_3.webp" data-title="海辺のお散歩" data-desc="波打ち際でのんびり ・ 📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_3.webp" alt="波打ち際が穏やかな海辺を、楽しそうに歩き回るミルナの後ろ姿" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">海辺のお散歩</span>
+                                <span class="gal-cap-credit">📷 yoshiさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="outdoor">
+                        <a class="gal-card" href="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_4.webp" data-lightbox="gallery" data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_4.webp" data-title="FRAME 067" data-desc="📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_4.webp" alt="ミルナ - yoshiさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 067</span>
+                                <span class="gal-cap-credit">📷 yoshiさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="outdoor">
+                        <a class="gal-card" href="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_5.webp" data-lightbox="gallery" data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_5.webp" data-title="FRAME 068" data-desc="📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_5.webp" alt="ミルナ - yoshiさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 068</span>
+                                <span class="gal-cap-credit">📷 yoshiさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="outdoor">
+                        <a class="gal-card" href="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_6.webp" data-lightbox="gallery" data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_6.webp" data-title="FRAME 069" data-desc="📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_6.webp" alt="ミルナ - yoshiさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 069</span>
+                                <span class="gal-cap-credit">📷 yoshiさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="outdoor">
+                        <a class="gal-card" href="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_7.webp" data-lightbox="gallery" data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_7.webp" data-title="FRAME 070" data-desc="📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_7.webp" alt="ミルナ - yoshiさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 070</span>
+                                <span class="gal-cap-credit">📷 yoshiさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure class="gal-item" data-category="outdoor">
+                        <a class="gal-card" href="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_9.webp" data-lightbox="gallery" data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_9.webp" data-title="FRAME 071" data-desc="📷 yoshiさん">
+                            <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_9.webp" alt="ミルナ - yoshiさんが撮影した一枚" loading="lazy">
+                            <figcaption>
+                                <span class="gal-cap-title">FRAME 071</span>
+                                <span class="gal-cap-credit">📷 yoshiさん</span>
+                            </figcaption>
+                        </a>
+                    </figure>
+            </div>
+        </div>
+
+        <div class="container">
+            <figure class="gal-spread" data-category="outdoor">
+                <a class="gal-spread-link" href="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_20.webp" data-lightbox="gallery" data-img="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_20.webp" data-title="仲良しトリオ" data-desc="海沿いの道で ・ 📷 yoshiさん">
+                    <img src="img/yoshi/LINE_ALBUM_yoshl撮影分②_260221_20.webp" alt="ミルナ - 仲良しトリオ" loading="lazy" width="2048" height="1365">
+                </a>
+                <figcaption>
+                    <span class="gal-spread-eyebrow">PLATE 003</span>
+                    <span class="gal-spread-title">仲良しトリオ</span>
+                    <span class="gal-spread-credit">📷 yoshiさん — 海沿いの道で</span>
+                </figcaption>
+            </figure>
+        </div>
+
         <div class="lightbox" id="lightbox">
             <div class="lightbox-content">
-                <button class="lightbox-close" id="lightboxClose" aria-label="閉じる">
-                    <i class="fas fa-times"></i>
-                </button>
-                <button class="lightbox-prev" id="lightboxPrev" aria-label="前の画像">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="lightbox-next" id="lightboxNext" aria-label="次の画像">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
+                <button class="lightbox-close" id="lightboxClose" aria-label="閉じる">&times;</button>
+                <button class="lightbox-prev" id="lightboxPrev" aria-label="前の画像">&lsaquo;</button>
+                <button class="lightbox-next" id="lightboxNext" aria-label="次の画像">&rsaquo;</button>
                 <div class="lightbox-image-container">
                     <img id="lightboxImage" src="" alt="">
                 </div>
@@ -532,21 +797,14 @@
         </div>
     </main>
 
-    <!-- フッター -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <i class="fas fa-cat"></i>
-                    <span>ミルナ</span>
-                </div>
-                <p class="footer-text">
-                    &copy; 2026 Miluna. Powered by Milky Way &amp; Luna.
-                </p>
-                <p class="footer-subtitle">
-                    〜 銀河と月の黒猫 〜
-                </p>
+            <div class="footer-logo">MILUNA</div>
+            <div class="footer-links">
+                <a href="story.html">STORY</a>
+                <a href="events.html">EVENTS</a>
             </div>
+            <p class="footer-text">&copy; 2026 Miluna. Milky Way + Luna.</p>
         </div>
     </footer>
 
