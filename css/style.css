@@ -831,12 +831,11 @@ button { font-family: inherit; }
 .gal-spread-link {
   display: block;
   overflow: hidden;
-  max-height: 78vh;
 }
+/* plates are never cropped — natural aspect ratio, full frame */
 .gal-spread-link img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   transition: transform 1.2s cubic-bezier(.16,.84,.44,1);
 }
 .gal-spread-link:hover img { transform: scale(1.015); }
@@ -847,6 +846,37 @@ button { font-family: inherit; }
   align-items: baseline;
   margin-top: 14px;
   font-family: var(--font-display);
+}
+
+/* portrait plate: kept vertical, offset in its own column with the credit beside it */
+.gal-spread--tall {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(20px, 4vw, 64px);
+  align-items: end;
+}
+.gal-spread--tall .gal-spread-link {
+  max-width: min(100%, 620px);
+}
+.gal-spread--tall figcaption {
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 0;
+  padding-bottom: 4px;
+}
+
+@media (max-width: 760px) {
+  .gal-spread--tall {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+  .gal-spread--tall figcaption {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px 18px;
+    margin-top: 14px;
+    padding-bottom: 0;
+  }
 }
 .gal-spread-eyebrow { font-size: 0.7rem; letter-spacing: 0.16em; color: var(--purple); text-transform: uppercase; }
 .gal-spread-title { font-size: 1rem; font-weight: 700; letter-spacing: 0.03em; }
